@@ -1,0 +1,158 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/scriptsSite/jsHome/jsRegistro.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+}
+
+<div class="card" style="margin-top:5%;">
+    <div class="card-body">
+        <div class="form-horizontal" style="color:dimgray">
+
+
+               
+
+                <div class="col-md-3 text-md-right">
+                    <label class="control-label">Marca de Tiempo</label>
+                 </div>
+                <div class="col-md-8">
+                    <input type="text" id="marcaTiempo" name="marcatiempo" class="form form-control" />
+                </div>
+
+                <div class="col-md-3 text-md-right">
+                    <label class="control-label">Fecha de Registro</label>
+                </div>
+                <div class="col-md-8">                   
+                    <input type="date" id="fechaRegistro" name="fechaRegistro" class="form form-control" />
+                </div>
+
+                <div class="col-md-3 text-md-right">
+                    <label class="control-label">Pais</label>
+                </div>
+                  <div class="col-md-8">
+                    <select id="pais" name="pais" class="form-control form-control-sm" required> 
+                    </select>
+                </div>
+
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Estado/Departamento</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="estado" name="estado" class="form form-control" />
+                </div>
+
+                <div class="col-md-3 text-md-right">
+                    <label class="control-label">Ciudad</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="ciudad" name="ciudad" class="form form-control" />
+                </div>
+
+
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Municipio/Provincia</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="municipio_provincia" name="municipio_provincia" class="form form-control" />
+                </div>
+
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Codigo Postal</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="codigo postal" name="codigo postal" class="form form-control" />
+                </div>
+
+            
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Parroquia/Distrito</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="parroquia_dist" name="parroquia_dist" class="form form-control" />
+                </div>
+
+                
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Urbanizacion/Barrio/Sector/Conjunto</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="urbanizacion" name="urbanizacion" class="form form-control" />
+                </div>
+
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Avenida/Calle/Vereda/Manzana</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="avenida" name="avenida" class="form form-control" />
+                </div>
+
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Edificio/Casa</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="edificio_casa" name="edificio_casa" class="form form-control" />
+                </div>
+
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Piso</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="piso" name="piso" class="form form-control" />
+                </div>
+
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Apartamento N°</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="apartamentoN" name="apartamentoN" class="form form-control" />
+                </div>
+
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Punto de Referencia</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="puntodereferencia" name="puntodereferencia" class="form form-control" />
+                </div>
+                  
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Telefono</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="telefono" name="telefono" class="form form-control" />
+                </div>
+
+                <div class="col-md-3 text-md-right">
+                    <label class="control-label">Telefono Alternativo</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="telefono.alternativo" name="telefono.alternativo" class="form form-control" />
+                </div>
+
+                <div class="col-md-3 text-md-right">
+                    <label class="control-label">Correo Electronico</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="correo" name="correo" class="form form-control" />
+                </div>
+
+
+            <div class="form-group row">
+               
+               
+                <div class="col-md-6 text-md-left" style="">
+                    <input type="reset" value="Atras" class="btn btn-danger form-control" onclick="" style="width:300px;" />
+                </div>
+
+                 <div class="col-md-6 tex-md-right">
+                    <input type="button" value="Siguiente" class="btn btn-success form-control" onclick=""style="width:300px;" />
+                </div>
+
+            </div>
+
+        </div>
+    </div> 
+</div>
+
+
+

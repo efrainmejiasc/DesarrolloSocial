@@ -15,13 +15,33 @@ namespace DesarrolloSocialWeb.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View("Registro");
         }
 
-        public IActionResult Privacy()
+        public IActionResult PRegistro()
         {
             return View();
         }
+
+        public IActionResult CorredorHumanitario()
+        {
+            return View();
+        }
+
+
+        public IActionResult ResponsabledeFamilia()
+        {
+            return View();
+        }
+
+        public IActionResult CargaFamiliar()
+        {
+            return View();
+        }
+
+
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
