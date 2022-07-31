@@ -15,10 +15,10 @@ namespace DesarrolloSocialWeb.Controllers
 
         public IActionResult Index()
         {
-            return View("Registro");
+            return View();
         }
 
-        public IActionResult PRegistro()
+        public IActionResult Registro()
         {
             return View();
         }

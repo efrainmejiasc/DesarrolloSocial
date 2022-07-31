@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/scriptsSite/jsHome/jsRegistro.js"></script>
+    <script src="~/js/scriptsSite/jsHome/jsCargaFamiliar.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 }
@@ -64,7 +64,7 @@
              </div>
 
 
- <div class="col-md-3 text-md-right">
+          <div class="col-md-3 text-md-right">
                 <label class="control-label">Trabajan?</label>
           </div>
              <div class="col-md-8">
@@ -74,40 +74,109 @@
 
               <div class="col-md-3 text-md-right">
                 <label class="control-label">Realizan Alguna Actividad Cultural</label>
-          </div>
+              </div>
              <div class="col-md-8">
                 <input type="text" id="edad" name="edad" class="form form-control" />
              </div>
 
-              <div class="form-group row col-md-8">
+<br />
+             <div class="col-md-8 text-md-center">
+                 <div class="col-md-8">
+                   <label class="control-label" style="font-weight:bold;font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Familia</label>
+                </div>
+             </div> 
                  
-                      <div class="col-md-3 text-md-left" style="">
-                        <label class="control-label"></label>
-                      </div>
-                      <div class="col-md-5">
-                         <input type="text" id="edad" name="edad" class="form form-control" />
-                       </div>
-                  
-                
-               
-                      <div class="col-md-3 text-md-right" style="">
-                        <label class="control-label"></label>
-                      </div>
-                      <div class="col-md-5">
-                         <input type="text" id="edad" name="edad" class="form form-control" />
-                       </div>
-                 
-            </div>
+          <br />
+
+          <div class="container">
 
 
+              <table id="cargaFamiliar" class="table table-light">
+                  <thead>
+                      <tr>
+                          <th></th>
+                          <th>Edad</th>
+                          <th>Cantidad</th>
+                          <th>Documentos</th>
+                          <th>Estudia</th>
+                          <th>Trabaja</th>
+                          <th>Ingreso </th>
+                          <th>Actividades</th>
+                          <th>Embarazos</th>
+                          <th>Enfermedad/Discapacidad</th>
+                          <th>Tratamiento</th>
+                      </tr>
+                  </thead>
 
+                  <tbody>
+                      <tr>
+                          <td style="color:black;font-weight:bold;font-size:16px;">Jefe de Familia</td>
+                          <td><input type="number" id="edad1" step="1" min="1" max="100"/></td>
+                          <td><input type="number"  id="cantidad1" step="1" min="1" max="100"/></td>
+                          <td><select id="documento1"><option value="0" selected disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><select id="estudia1"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><select id="trabaja1"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><input type="number" id="ingreso1" step="5" min="1" max="100"/></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                      </tr>
+                        <tr>
+                          <td style="color:black;font-weight:bold;font-size:16px;">Niños</td>
+                          <td><input type="number" id="edad2" step="1" min="1" max="100"/></td>
+                          <td><input type="number"  id="cantidad2" step="1" min="1" max="100"/></td>
+                          <td><select id="documento2"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><select id="estudia2"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><select id="trabaja2"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><input type="number" id="ingreso2" step="5" min="1" max="100"/></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                      </tr>
+                        <tr>
+                          <td style="color:black;font-weight:bold;font-size:16px;">Adolecentes</td>
+                          <td><input type="number" id="edad3" step="1" min="1" max="100"/></td>
+                          <td><input type="number"  id="cantidad3" step="1" min="1" max="100"/></td>
+                          <td><select id="documento3"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><select id="estudia3"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><select id="trabaja3"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><input type="number" id="ingreso3" step="5" min="1" max="100"/></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                      </tr>
+                        <tr>
+                          <td style="color:black;font-weight:bold;font-size:16px;">Adultos</td>
+                          <td><input type="number" id="edad4" step="1" min="1" max="100"/></td>
+                          <td><input type="number"  id="cantidad4" step="1" min="1" max="100"/></td>
+                          <td><select id="documento4"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><select id="estudia4"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><select id="trabaja4"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><input type="number" id="ingreso4" step="5" min="1" max="100"/></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                      </tr>
+                        <tr>
+                          <td style="color:black;font-weight:bold;font-size:16px;">Adultos Mayores</td>
+                          <td><input type="number" id="edad5" step="1" min="1" max="100"/></td>
+                          <td><input type="number"  id="cantidad5" step="1" min="1" max="100"/></td>
+                          <td><select id="documento5"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><select id="estudia5"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><select id="trabaja5"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><input type="number" id="ingreso5" step="5" min="1" max="100"/></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                      </tr>
+                  </tbody>
 
-
-
-
-
-
-
+              </table>
 
         </div>
     </div> 
