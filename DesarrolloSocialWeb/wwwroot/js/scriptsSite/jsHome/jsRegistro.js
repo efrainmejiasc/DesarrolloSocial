@@ -38,13 +38,14 @@ function GetPaises() {
 
     $.ajax({
         type: "GET",
-        url: 'https://www.universal-tutorial.com/api/countries',
+        url: 'https://restcountries.com/v3.0/all',
         datatype: "json",
         success: function (data) {
+            console.log(data);
             $('pais').empty();
             $('#pais').append('<option value="-1" disabled selected>Seleccione pais...</option>');
             $.each(data, function (index, item) {
-                $('#pais').append("<option value=\"" + item.country_name + "\">" + item.country_name + "</option>");
+                $('#pais').append("<option value=\"" + item.name.common + "\">" + item.name.common + "</option>");
             });
         }
     });

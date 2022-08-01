@@ -3,6 +3,8 @@
     CargaFamiliar();
 });
 
+
+
 function CargaFamiliar() {
 
     $('#rol').empty();
