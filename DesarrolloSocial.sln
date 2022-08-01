@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesarrolloSocialWeb", "DesarrolloSocialWeb\DesarrolloSocialWeb.csproj", "{5714FEC7-D364-4129-8D69-80D8EC5FA8B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesarrolloSocialWeb", "DesarrolloSocialWeb\DesarrolloSocialWeb.csproj", "{5714FEC7-D364-4129-8D69-80D8EC5FA8B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesarrolloSocialNegocio", "DesarrolloSocialNegocio\DesarrolloSocialNegocio.csproj", "{37A411C1-ACBC-400B-863D-50284FC5C181}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesarrolloSocialNegocio", "DesarrolloSocialNegocio\DesarrolloSocialNegocio.csproj", "{37A411C1-ACBC-400B-863D-50284FC5C181}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesarrolloSocialModelo", "DesarrolloSocialModelo\DesarrolloSocialModelo.csproj", "{EACD39BD-4A10-463E-B7E7-7DAA0CC0D9F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesarrolloSocialModelo", "DesarrolloSocialModelo\DesarrolloSocialModelo.csproj", "{EACD39BD-4A10-463E-B7E7-7DAA0CC0D9F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1B5F4A7A-2711-4669-9938-C51C7ABC41AC}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

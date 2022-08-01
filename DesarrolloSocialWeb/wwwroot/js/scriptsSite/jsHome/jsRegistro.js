@@ -38,14 +38,37 @@ function GetPaises() {
 
     $.ajax({
         type: "GET",
-        url: 'https://restcountries.com/v3.1/all',
+        url: urlPaises,
         datatype: "json",
-        success: function (data) {
-            console.log(data);
-            $('pais').empty();
+        success: function (content) {
+            var indice = 0;
+            $('#pais').empty();
             $('#pais').append('<option value="-1" disabled selected>Seleccione pais...</option>');
-            $.each(data, function (index, item) {
-                $('#pais').append("<option value=\"" + item.name.common + "\">" + item.name.common + "</option>");
+            $.each(content.data, function (index, item) {
+                $('#pais').append("<option value=\"" + indice + "\">" + item.country + "</option>");
+                indice++;
+            });
+        }
+    });
+    return false;
+}
+
+
+function GetCiudadesPais() {
+
+    var id = $('#pais').val();
+
+    $.ajax({
+        type: "GET",
+        url: urlCiudadesPais,
+        data: {id: id},
+        datatype: "json",
+        success: function (content) {
+            console.log(content);
+            $('#estado').empty();
+            $('#estado').append('<option value="-1" disabled selected>Seleccione estado...</option>');
+            $.each(content, function (index, item) {
+                $('#estado').append("<option value=\"" + item + "\">" + item + "</option>");
             });
         }
     });

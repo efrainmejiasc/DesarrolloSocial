@@ -6,14 +6,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 }
 
+<script>
+    var urlPaises = '@Url.Action("GetPaises","Home")';
+    var urlCiudadesPais = '@Url.Action("GetCiudadesPais","Home")';
+</script>
+
 <div class="card" style="margin-top:5%;">
     <div class="card-body">
         <div class="form-horizontal" style="color:dimgray">
-
-
-               
-
-         
 
                 <div class="col-md-3 text-md-right">
                     <label class="control-label">Fecha de Registro</label>
@@ -32,7 +32,7 @@
                     <label class="control-label">País</label>
                 </div>
                   <div class="col-md-8">
-                    <select id="país" name="país" class="form-control form-control-sm" required> 
+                    <select id="pais" name="pais" class="form-control form-control-sm" required> 
                     </select>
                 </div>
 
@@ -40,7 +40,7 @@
                     <label class="control-label">Estado/Departamento</label>
                 </div>
                   <div class="col-md-8">
-                    <input type="text" id="estado" name="estado" class="form form-control" />
+                    <select id="estado" name="estado" class="form-control form-control-sm"  required> </select>
                 </div>
 
                 <div class="col-md-3 text-md-right">
