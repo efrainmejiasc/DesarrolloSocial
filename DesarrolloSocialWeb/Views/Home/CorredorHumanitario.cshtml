@@ -1,16 +1,19 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/scriptsSite/jsHome/jsCorredorHumanitario.js"></script>
+    <script src="~/js/scriptsSite/jsHome/jsRegistro.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 }
+
 <div class="card" style="margin-top:5%;">
     <div class="card-body">
-        <div class="form-horizontal" style="color:dimgray">
-</div>
-   </div>
-       </div>
+        <estrog class="form-horizontal" style="color:dimgray">
+
+
+            <div class="col-md-8 text-md-right">
+                    <label class="control-label"style=";font-weight:bold;font-size:16px;">Solo si Proviene de Otro País/Corredor Humanitario</label>
+                 </div>
 
            <div class="col-md-3 text-md-right">
                     <label class="control-label">País de Origen</label>
@@ -37,18 +40,20 @@
                     <label class="control-label">¿Tiene un Lugar de Arrivo?</label>
                  </div>
                 <div class="col-md-8">
-                    <input type="text" id="direcciondearrivo" name="direcciondearrivo" class="form form-control" />
+                    <input type="text" id="lugardearrivo" name="lugardearrivo" class="form form-control" />
                 </div>
-
+                 
                 <div class="col-md-3 text-md-right">
-                    <label class="control-label">Direccion de Arrivo</label>
-                 </div>
+
+                    <label class="control-label" style=";font-weight:bold;font-size:16px;">Dirección de Arrivo</label> 
+                  
+                </div>
 
                     <div class="col-md-3 text-md-right">
-                    <label class="control-label">Pais</label>
+                    <label class="control-label">País</label>
                 </div>
                   <div class="col-md-8">
-                    <select id="pais" name="pais" class="form-control form-control-sm" required> 
+                    <select id="país" name="país" class="form-control form-control-sm" required> 
                     </select>
                 </div>
 
@@ -65,6 +70,9 @@
                   <div class="col-md-8">
                     <input type="text" id="ciudad" name="ciudad" class="form form-control" />
                 </div>
+
+
+
 
 
        <div class="col-md-3 text-md-right">
@@ -109,19 +117,41 @@
                  <input type="text" id="referencia" name="referencia" class="form form-control" />
            </div>
 
-        <div class="col-md-3 text-md-right">
+         <div class="col-md-3 text-md-right">
                     <label class="control-label">Telefono</label>
-        </div>
-                <div class="col-md-8">
+                </div>
+
+                 <div class="form-group row col-md-12">
+
+        <div class="col-md-1 text-md-left">
+                    <input type="text" id="codigo" name="codigo" class="form form-control" placeholder="+58" />
+                </div>
+
+               <div class="col-md-7 text-md-right">
                     <input type="text" id="telefono" name="telefono" class="form form-control" />
                 </div>
 
-     <div class="col-md-3 text-md-right">
+
+             </div>
+                 
+
+                <div class="col-md-3 text-md-right">
                     <label class="control-label">Telefono Alternativo</label>
-     </div>
-             <div class="col-md-8">
-                  <input type="text" id="telefono.alternativo" name="telefono.alternativo" class="form form-control" />
-            </div>
+                </div>
+
+                <div class="form-group row col-md-12">
+
+
+                  <div class="col-md-1 text-md-left">
+                    <input type="text" id="telefono.alternativo" name="telefono.alternativo" class="form form-control" placeholder="+58"  />
+                </div>
+
+                 <div class="col-md-7 text-md-right">
+                    <input type="text" id="telefono.alternativo" name="telefono.alternativo" class="form form-control" />
+                </div>
+
+                 </div>
+
 
      <div class="col-md-3 text-md-right">
                     <label class="control-label">Correo Electronico</label>
