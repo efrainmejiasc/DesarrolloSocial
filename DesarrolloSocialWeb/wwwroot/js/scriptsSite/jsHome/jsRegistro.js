@@ -38,7 +38,7 @@ function GetPaises() {
 
     $.ajax({
         type: "GET",
-        url: 'https://restcountries.com/v3.0/all',
+        url: 'https://restcountries.com/v3.1/all',
         datatype: "json",
         success: function (data) {
             console.log(data);
