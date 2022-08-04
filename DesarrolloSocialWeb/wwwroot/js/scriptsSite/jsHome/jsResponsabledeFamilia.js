@@ -5,6 +5,8 @@
     $('#fechaNacimiento').val(date);
 
 });
+
+
 function FechaActual() {
 
     var today = new Date();
@@ -15,5 +17,18 @@ function FechaActual() {
 
     return date;
 
+}
+
+function MostrarDiscapacidad() {
+    var discapacidad = $('#discapacidad').val();
+    if (discapacidad == 1) {
+        $('#lblTiposDiscapacidad').show();
+        $('#tiposDiscapacidad').show();
+    }
+    else {
+        $('#lblTiposDiscapacidad').hide();
+        $('#tiposDiscapacidad').hide();
+    }
+        
 }
 
