@@ -34,27 +34,35 @@
              <div class="col-md-8">
                 <input type="text" id="nacionalidad" name="nacionalidad" class="form form-control" />
              </div>
-
+             <br />
              
-           <div class="col-md-8">
-                <label class="control-label">Tipo de Documento</label>
-          </div>
-           <div class="col-md-8">
-            <select id="sexo"name="sexo" class="form-control form-control-sm">
+         <div class="col-md-12 text-left">
+
+             <div class="item form-group row col-md-10">
+
+               <div class="col-md-2">
+               <label class="control-label">Documento</label>
+              </div>
+                <div class="col-md-3">
+               <select id="sexo"name="sexo" class="form-control">
                          <option value="0" disabled  selected >Seleccione Documento...</option>
                          <option value="1">Cédula</option>
                          <option value="2">Pasaporte</option>  
                          <option value="3">Rif</option>  
                          <option value="4">Otro</option>  
-             </select>
+                </select>
+              </div>
 
-             </div>
-               <div class="col-md-3 text-md-right">
-                <label class="control-label">Numero de Documento</label>
-          </div>
-             <div class="col-md-8">
+               <div class="col-md-2">
+                <label class="control-label">Numero</label>
+              </div>
+
+                <div class="col-md-3">
                 <input type="text" id="numerodocument" name="numerodocument" class="form form-control" />
+              </div>
              </div>
+
+         </div>
 
 
           <div class="col-md-3 text-md-right">
@@ -212,7 +220,7 @@
                 <label class="control-label">¿Tiene Alguna Discapacidad?</label>
           </div>
             <div class="col-md-8">
-            <select id="sexo"name="sexo" class="form-control form-control-sm">
+            <select id="discapacidad"name="discapacidad" class="form-control form-control-sm" onchange="    MostrarDiscapacidad();">
                          <option value="0" disabled  selected >Seleccione...</option>
                          <option value="1">Si</option>
                          <option value="2">No</option>  
@@ -221,16 +229,16 @@
               </div>
             
              
-              <div class="col-md-8">
-            <select id="sexo"name="sexo" class="form-control form-control-sm">
-                         <option value="0" disabled  selected >Tipo</option>
+           <div class="col-md-8">
+                <label class="control-label" id="lblTiposDiscapacidad" style="display:none;">Tipo Discapacidad</label>
+          </div>
+            <div class="col-md-8">
+            <select id="tiposDiscapacidad"name="tiposDiscapacidad" class="form-control form-control-sm" style="display:none;">
+                         <option value="0" disabled  selected >Seleccione Tipo ..</option>
                          <option value="1">Psiquica (Mental, Intelectual)</option>
                          <option value="2">Sensorial (Visual,Auditiva,Lenguaje)</option>  
                          <option value="3">Física(Miembros)</option>  
-                         <option value="3">Mixta o PLuridefisiente</option>  
-
-        
-                         
+                         <option value="4">Mixta o PLuridefisiente</option>  
              </select>
               </div>
             
@@ -241,7 +249,7 @@
           </div>
             <div class="col-md-8">
             <select id="sexo"name="sexo" class="form-control form-control-sm">
-                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="0" disabled  selected >Seleccione Tratamiento...</option>
                          <option value="1">Si</option>
                          <option value="2">No</option>  
                           
