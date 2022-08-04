@@ -9,7 +9,7 @@
 
 <div class="card" style="margin-top:5%;">
     <div class="card-body">
-        <div class="form-horizontal" style="color:dimgray">
+        <div class="form-horizontal" style="color:Dimgray">
 
        
 
@@ -35,20 +35,27 @@
                 <input type="text" id="nacionalidad" name="nacionalidad" class="form form-control" />
              </div>
 
-
-               <div class="col-md-3 text-md-right">
-                <label class="control-label">Tipo de documento de Identidad</label>
+             
+           <div class="col-md-8">
+                <label class="control-label">Tipo de Documento</label>
           </div>
-             <div class="col-md-8">
-                <input type="text" id="tipodocument" name="tipodocument" class="form form-control" />
-             </div>
+           <div class="col-md-8">
+            <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione Documento...</option>
+                         <option value="1">Cédula</option>
+                         <option value="2">Pasaporte</option>  
+                         <option value="3">Rif</option>  
+                         <option value="4">Otro</option>  
+             </select>
 
+             </div>
                <div class="col-md-3 text-md-right">
                 <label class="control-label">Numero de Documento</label>
           </div>
              <div class="col-md-8">
                 <input type="text" id="numerodocument" name="numerodocument" class="form form-control" />
              </div>
+
 
           <div class="col-md-3 text-md-right">
                 <label class="control-label">Lugar de Nacimiento</label>
@@ -57,12 +64,12 @@
                 <input type="text" id="lugarnacimiento" name="lugarnacimiento" class="form form-control" />
              </div>
 
-               <div class="col-md-3 text-md-right">
-                <label class="control-label">Feche de Nacimiento</label>
-          </div>
-             <div class="col-md-8">
-                <input type="text" id="fechenacimiento" name="fechenacimiento" class="form form-control" />
-             </div>
+                  <div class="col-md-3 text-md-right">
+                    <label class="control-label">Fecha de Nacimiento</label>
+                </div>
+                <div class="col-md-8">                   
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form form-control" />
+                </div>
 
          <div class="col-md-3 text-md-right">
                 <label class="control-label">Edad</label>
@@ -71,31 +78,61 @@
                 <input type="text" id="edad" name="edad" class="form form-control" />
              </div>
 
-         <div class="col-md-3 text-md-right">
+
+           <div class="col-md-8">
                 <label class="control-label">Sexo</label>
           </div>
-             <div class="col-md-8">
-                <input type="text" id="sexo" name="Id" class="form form-control" />
-             </div>
+           <div class="col-md-8">
+            <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione Sexo...</option>
+                         <option value="1">Femenino</option>
+                         <option value="2">Masculino</option>  
+             </select>
 
-          <div class="col-md-3 text-md-right">
+             </div>
+       
+
+             <div class="col-md-8">
                 <label class="control-label">Estado Civil</label>
           </div>
-             <div class="col-md-8">
-                <input type="text" id="estadocivil" name="estadocivil" class="form form-control" />
+           <div class="col-md-8">
+            <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Soltero (a)</option>
+                         <option value="2">Casado (a)</option>  
+                         <option value="3">Viudo(a)</option>  
+                         <option value="4">Divorciado(a)</option>  
+                         <option value="5">Union de echo estable</option>  
+            </select>
+
              </div>
 
-               <div class="col-md-3 text-md-right">
+        <div class="col-md-8">
                 <label class="control-label">Nivel de Instrucción</label>
           </div>
-             <div class="col-md-8">
-                <input type="text" id="niveldeinstrucción" name="niveldeinstrucción" class="form form-control" />
+           <div class="col-md-8">
+            <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Primaria</option>
+                         <option value="2">Secundaria</option>  
+                         <option value="3">Pre-Grado</option>  
+                         <option value="4">Post-Grado</option>  
+                         <option value="5">Iletrado</option>  
+                         <option value="6">Otro/Especifique</option>  
+                </select>
+
+                
+             <div class="col-md-12">
+                <input type="text" id="especifiqueinstruccion" name="especifique" class="form form-control" />
              </div>
 
-
-               <div class="col-md-3 text-md-right">
+             </div>
+ 
+                  <div class="col-md-3 text-md-right">
                 <label class="control-label">Profesión u oficio </label>
           </div>
+
+
              <div class="col-md-8">
                 <input type="text" id="profesión" name="profesión" class="form form-control" />
              </div>
@@ -107,25 +144,42 @@
                 <input type="text" id="habilidades" name="habilidades" class="form form-control" />
              </div>
 
-               <div class="col-md-3 text-md-right">
-                <label class="control-label">¿Trabajas Actualmente?</label>
+               <div class="col-md-8">
+                <label class="control-label">Trabaja Actualmente</label>
           </div>
-             <div class="col-md-8">
-                <input type="text" id="¿trabaja?" name="¿trabaja?" class="form form-control" />
-             </div>
+           <div class="col-md-8">
+            <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Si</option>
+                         <option value="2">No</option>  
+                          
+             </select>
+              </div>
 
-               <div class="col-md-3 text-md-right">
-                <label class="control-label">¿Cual es su Condicion Laboral?</label>
-          </div>
-             <div class="col-md-8">
-                <input type="text" id="condicionlaboral" name="condicionlaboral" class="form form-control" />
-             </div>
 
-               <div class="col-md-3 text-md-right">
-                <label class="control-label">Especifique el tipo de negocio actual</label>
+                 <div class="col-md-8">
+                <label class="control-label">Habilidades y Destrezas</label>
           </div>
-             <div class="col-md-8">
-                <input type="text" id="Id" name="Id" class="form form-control" />
+
+               <div class="col-md-8">
+            <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Dependiente</option>
+                         <option value="2">Independiente</option>  
+                          
+             </select>
+              </div>
+
+              <div class="col-md-8">
+                <label class="control-label">Especifique el Tipo de Negocio Actual</label>
+          </div>
+           <div class="col-md-8">
+            <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Formal</option>
+                         <option value="2">Informal</option>  
+             </select>
+
              </div>
 
         <div class="col-md-3 text-md-right">
@@ -135,64 +189,90 @@
                 <input type="text" id="medio de transporte" name="medio de transporte" class="form form-control" />
              </div>
 
-               <div class="col-md-3 text-md-right">
+              <div class="col-md-8">
                 <label class="control-label">¿Tiene Hijos?</label>
           </div>
-             <div class="col-md-8">
-                <input type="text" id="tienehijos?" name="tienehijos?" class="form form-control" />
-             </div>
+           <div class="col-md-8">
+            <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Si</option>
+                         <option value="2">No</option>  
+                          
+             </select>
+              </div>
 
                <div class="col-md-3 text-md-right">
-                <label class="control-label">¿Cuantos hijos tiene?</label>
+                <label class="control-label">Nº de Hijos</label>
           </div>
              <div class="col-md-8">
                 <input type="text" id="n°hijos" name="n°hijos" class="form form-control" />
              </div>
 
 
-          <div class="col-md-3 text-md-right">
-                <label class="control-label">¿Tiene Alguna Discapacidad?</label>
+  <div class="col-md-3 text-md-right">
+                <label class="control-label">¿Tiene alguna Discapacidad?</label>
           </div>
-             <div class="col-md-8">
-                <input type="text" id="discapacidad" name="discapacidad" class="form form-control" />
+
+          <div class="form-group row col-md-12">
+               <div class="col-md-5 text-md-left">
+            <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Si</option>
+                         <option value="2">No</option>  
+             </select>
+
              </div>
 
+             <div class="col-md- text-md-left">
+                <label class="control-label">colocarlaal lado</label>
+             <div class="col-md-7 text-md-right">
+                 <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Si</option>
+                         <option value="2">No</option>  
+             </select>
+             </div>
 
-           <div class="col-md-3 text-md-right">
+              </div>
+
+              </div>
+
+           <div class="col-md-8">
                 <label class="control-label">¿Tiene Tratamiento o Terapia?</label>
           </div>
-             <div class="col-md-8">
-                <input type="text" id="tratamiento" name="tratamiento" class="form form-control" />
-            </div>
-
+            <div class="col-md-8">
+            <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Si</option>
+                         <option value="2">No</option>  
+                          
+             </select>
+              </div>
             
-           <div class="col-md-3 text-md-right">
+           <div class="col-md-8 ">
                 <label class="control-label">¿Padece de Alguna Enfermedad?</label>
           </div>
              <div class="col-md-8">
-                <input type="text" id="enfermadad" name="enfermedad" class="form form-control" />
-            </div>
+            <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Si</option>
+                         <option value="2">No</option>  
+                          
+             </select>
+              </div>
 
-          <div class="col-md-3 text-md-right"> 
+          <div class="col-md-8 text-md-right"> 
                 <label class="control-label">¿Tiene Tratamiento?</label>
           </div>
-             <div class="col-md-8">
-                <input type="text" id="tratamientoenfermedad" name="tratamientoenfermedad" class="form form-control" />
-            </div>
 
-          <div class="col-md-3 text-md-right">
-                <label class="control-label">¿Cuantas Personas Permanece Bajo su Cargo Y Habita Con Ud?</label>
-          </div>
              <div class="col-md-8">
-                <input type="text" id="cantidadpersonas" name="cantidadpersonas" class="form form-control" />
-            </div>
-
-         <div class="col-md-3 text-md-right">
-                <label class="control-label">¿Los Niños Adolescente en Edad Escolar, Estudian?</label>
-          </div>
-             <div class="col-md-8">
-                <input type="text" id="estudianlosniños" name="estudianlosniños" class="form form-control" />
-            </div>
+            <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Si</option>
+                         <option value="2">No</option>  
+                          
+             </select>
+              </div>
 
 
              <div class="form-group row">

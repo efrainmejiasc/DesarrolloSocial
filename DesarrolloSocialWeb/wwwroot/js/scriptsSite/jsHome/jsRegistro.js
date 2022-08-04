@@ -14,7 +14,6 @@ function FechaActual() {
 
     return date;
 }
-
 function GetExistenciaArticuloBodega_(id) {
 
     console.log(id);

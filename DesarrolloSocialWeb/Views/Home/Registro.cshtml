@@ -11,9 +11,10 @@
     var urlCiudadesPais = '@Url.Action("GetCiudadesPais","Home")';
 </script>
 
+
 <div class="card" style="margin-top:5%;">
     <div class="card-body">
-        <div class="form-horizontal" style="color:dimgray">
+        <div class="form-horizontal" style="color:dD8CDCA">
 
                 <div class="col-md-3 text-md-right">
                     <label class="control-label">Fecha de Registro</label>
@@ -32,7 +33,7 @@
                     <label class="control-label">País</label>
                 </div>
                   <div class="col-md-8">
-                    <select id="pais" name="pais" class="form-control form-control-sm" required> 
+                    <select id="pais" name="pais" class="form-control form-control-sm"  onchange="    GetCiudadesPais();" required> 
                     </select>
                 </div>
 
@@ -127,7 +128,7 @@
                 </div>
 
                <div class="col-md-7 text-md-right">
-                    <input type="text" id="telefono" name="telefono" class="form form-control" />
+                    <input type="text" id="telefono" name="telefono" class="form form-control" placeholder="424-331-21-31"/>
                 </div>
 
 
@@ -146,7 +147,7 @@
                 </div>
 
                  <div class="col-md-7 text-md-right">
-                    <input type="text" id="telefono.alternativo" name="telefono.alternativo" class="form form-control" />
+                    <input type="text" id="telefono.alternativo" name="telefono.alternativo" class="form form-control" placeholder="424-331-21-31" />
                 </div>
 
                  </div>
@@ -156,7 +157,7 @@
                     <label class="control-label">Correo Electronico</label>
                 </div>
                   <div class="col-md-8">
-                    <input type="email" id="correo" name="correo" class="form form-control" />
+                    <input type="email" id="correo" name="correo" class="form form-control" placeholder="example@gmail.com" /> 
                 </div>
 
 

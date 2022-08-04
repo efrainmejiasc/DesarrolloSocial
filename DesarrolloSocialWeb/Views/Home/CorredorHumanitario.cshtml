@@ -8,7 +8,8 @@
 
 <div class="card" style="margin-top:5%;">
     <div class="card-body">
-        <estrog class="form-horizontal" style="color:dimgray">
+        <div class="form-horizontal" style="color:dD8CDCA">
+
 
 
             <div class="col-md-8 text-md-right">
@@ -26,22 +27,31 @@
                     <label class="control-label">¿Expresa Voluntad de Regresar a su País Origen?</label>
                  </div>
                 <div class="col-md-8">
-                    <input type="text" id="regresarpaisorigen" name="regresarpaisorigen" class="form form-control" />
+                    <select id="regresar"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select>
                 </div>
 
                  <div class="col-md-3 text-md-right">
                     <label class="control-label">¿Posee Vivienda En El País de Origen?</label>
                  </div>
                 <div class="col-md-8">
-                    <input type="text" id="viviendapaísorigen" name="viviendapaísorigen" class="form form-control" />
+                    <select id="paìsorigen"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select>
                 </div>
 
                 <div class="col-md-3 text-md-right">
                     <label class="control-label">¿Tiene un Lugar de Arrivo?</label>
                  </div>
                 <div class="col-md-8">
-                    <input type="text" id="lugardearrivo" name="lugardearrivo" class="form form-control" />
+                    <select id="lugarArrivo"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select>
                 </div>
+
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">¿Necesita Asilo? </label>
+                 </div>
+                <div class="col-md-8">
+                    <select id="necesitaAsilo"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select>
+                </div>
+
+
                  
                 <div class="col-md-3 text-md-right">
 
@@ -71,7 +81,20 @@
                     <input type="text" id="ciudad" name="ciudad" class="form form-control" />
                 </div>
 
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Municipio/Provincia</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="municipio_provincia" name="municipio_provincia" class="form form-control" />
+                </div>
 
+           
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Parroquia/Distrito</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="parroquia_dist" name="parroquia_dist" class="form form-control" />
+                </div>
 
 
 
@@ -83,11 +106,22 @@
            </div>
 
      <div class="col-md-3 text-md-right">
-                    <label class="control-label">Avenida/Calle/vereda/manzana</label>
+                    <label class="control-label">Avenida/Calle/Vereda/Manzana</label>
       </div>
             <div class="col-md-8">
                  <input type="text" id="avenida" name="avenida" class="form form-control" />
            </div>
+
+ <div class="col-md-3 text-md-right">
+                    <label class="control-label">Codigo Postal</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="codigo postal" name="codigo postal" class="form form-control" />
+                </div>
+
+
+
+
 
      <div class="col-md-3 text-md-right">
                     <label class="control-label">Edificio/Casa</label>
@@ -104,7 +138,7 @@
            </div>
 
      <div class="col-md-3 text-md-right">
-                    <label class="control-label">Apartamento N°</label>
+                 <label class="control-label">Apartamento Nº/Casa Nº</label>
       </div>
             <div class="col-md-8">
                  <input type="text" id="apartamentoN" name="apartamentoN" class="form form-control" />
@@ -159,3 +193,23 @@
             <div class="col-md-8">
                 <input type="text" id="correo" name="correo" class="form form-control" />
            </div>
+
+
+            <div class="form-group row">
+               
+               
+                <div class="col-md-6 text-md-left" style="">
+                    <input type="reset" value="Atras" class="btn btn-danger form-control" onclick="" style="width:300px;" />
+                </div>
+
+                 <div class="col-md-6 tex-md-right">
+                    <input type="button" value="Siguiente" class="btn btn-success form-control" onclick=""style="width:300px;" />
+                </div>
+
+            </div>
+
+        </div>
+    </div> 
+
+     </div>
+

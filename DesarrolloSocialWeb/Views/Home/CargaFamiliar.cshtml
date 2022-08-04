@@ -1,7 +1,9 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/scriptsSite/jsHome/jsCargaFamiliar.js"></script>
+    <script type="text/javascript"  src="~/js/scriptsSite/jsHome/jsCargaFamiliar.js"></script>
+     <link rel="stylesheet" type="text/css" href="~/js/dataTables/datatables.css" />
+    <script type="text/javascript" src="~/js/dataTables/datatables.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 }
@@ -18,67 +20,17 @@
                 <label class="control-label">¿Cuantas Personas Permanecen Bajo su Cargo y Habitan con Ud?</label>
           </div>
              <div class="col-md-8">
-                <input type="text" id="cuantaspersonasviven" name="cuantaspersonansviven" class="form form-control" />
-             </div>
+       <input type="number" id="cantidad" step="1" min="1" max="100"/>             </div>
 
 
            <div class="col-md-3 text-md-right">
                 <label class="control-label">¿Los Niños y Adolescentes en Edad Escolar Estudian?</label>
           </div>
              <div class="col-md-8">
-                <input type="text" id="losniñosestudian" name="losniñosestudian" class="form form-control" />
+              <select id="estudian"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select>
+
              </div>
-
-           <div class="col-md-3 text-md-right">
-                <label class="control-label">Familia</label>
-          </div>
-
-          <div class="col-md-3 text-md-right">
-                <label class="control-label">Niños 0-12 Años</label>
-          </div>
-             <div class="col-md-8">
-                <input type="text" id="niños" name="niños" class="form form-control" />
-             </div>
-
-               <div class="col-md-3 text-md-right">
-                <label class="control-label">adolescente</label>
-          </div>
-
-             <div class="col-md-8">
-                <input type="text" id="numerodocument" name="numerodocument" class="form form-control" />
-             </div>
-
-              <div class="col-md-3 text-md-right">
-                <label class="control-label">Poseen Documento</label>
-          </div>
-             <div class="col-md-8">
-                <input type="text" id="parentesco" name="parentesco" class="form form-control" />
-             </div>
-
-
-          <div class="col-md-3 text-md-right">
-                <label class="control-label">Estudian?</label>
-          </div>
-             <div class="col-md-8">
-                <input type="text" id="edad" name="edad" class="form form-control" />
-             </div>
-
-
-          <div class="col-md-3 text-md-right">
-                <label class="control-label">Trabajan?</label>
-          </div>
-             <div class="col-md-8">
-                <input type="text" id="edad" name="edad" class="form form-control" />
-             </div>
-
-
-              <div class="col-md-3 text-md-right">
-                <label class="control-label">Realizan Alguna Actividad Cultural</label>
-              </div>
-             <div class="col-md-8">
-                <input type="text" id="edad" name="edad" class="form form-control" />
-             </div>
-
+   
 <br />
              
 
@@ -90,18 +42,16 @@
                  
             <br />
 
-              <table id="cargaFamiliar" class="table table-light">
+              <table id="cargaFamiliar" class="display compact dt-center table table-striped table-light">
                   <thead>
                       <tr>
                           <th></th>
-                          <th>Edad</th>
                           <th>Cantidad</th>
-                          <th>Documentos</th>
+                          <th>Tienen Documento</th>
                           <th>Estudia</th>
                           <th>Trabaja</th>
-                          <th>Ingreso </th>
-                          <th>Deportes</th>
-                          <th>Cultura</th>
+                          <th>Ingreso ($) </th>
+                          <th>Act Deportiva<br/>Cultural/Artística</th>
                           <th>Embarazos</th>
                           <th>Enfermedad/<br />Discapacidad</th>
                           <th>Tratamiento</th>
@@ -111,79 +61,109 @@
                   <tbody>
                       <tr>
                           <td style="color:black;font-weight:bold;font-size:16px;">Jefe&nbsp;de&nbsp;Familia</td>
-                          <td><input type="number" id="edad1" step="1" min="1" max="100"disabled/></td>
-                          <td><input type="number" disabled id="cantidad1" step="1" min="1" max="100"/></td>
+                          <td><input type="number" disabled id="cantidad1" step="1" min="1" max="100" onblur="CantidadPersonas();"/></td>
                           <td><select id="documento1"disabled><option value="0" selected disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="estudia1"disabled><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="trabaja1"disabled><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
-                          <td><input type="number"disabled id="ingreso1" step="5" min="1" max="100"/></td>
+                          <td><input type="number"id="ingreso1" step="5" min="1" max="100"  onblur="TotalIngreso();"/></td>
                           <td><select id="deporte1"disabled><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
-                          <td><select id="cultura1"disabled><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
-                          <td><select id="embarazo1"disabled><option value="0" selected disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
+                          <td><select id="embarazo1"><option value="0" >Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="enfermedad1"disabled><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="tratamiento1"disabled><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                       </tr>
                         <tr>
-                          <td style="color:black;font-weight:bold;font-size:16px;">Niños</td>
-                          <td><input type="number" id="edad2" step="1" min="1" max="100"/></td>
-                          <td><input type="number"  id="cantidad2" step="1" min="1" max="100"/></td>
+                          <td style="color:black;font-weight:bold;font-size:16px;">Niños(0-12)</td> 
+                          <td><input type="number"  id="cantidad2" step="1" min="1" max="100" onblur="CantidadPersonas();"/></td>
                           <td><select id="documento2"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="estudia2"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="trabaja2"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
-                          <td><input type="number" id="ingreso2" step="5" min="1" max="100"/></td>
+                          <td><input type="number" id="ingreso2" step="5" min="1" max="100" onblur="TotalIngreso();"/></td>
                           <td><select id="deporte2"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
-                          <td><select id="cultura2"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="embarazo2"><option value="0" selected disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="enfermedad2"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="tratamiento2"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                       </tr>
                         <tr>
-                          <td style="color:black;font-weight:bold;font-size:16px;">Adolecentes</td>
-                          <td><input type="number" id="edad3" step="1" min="1" max="100"/></td>
-                          <td><input type="number"  id="cantidad3" step="1" min="1" max="100"/></td>
+                          <td style="color:black;font-weight:bold;font-size:16px;">Adolecentes (13-17)</td>
+                          <td><input type="number"  id="cantidad3" step="1" min="1" max="100"  onblur="CantidadPersonas();"/></td>
                           <td><select id="documento3"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="estudia3"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="trabaja3"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
-                          <td><input type="number" id="ingreso3" step="5" min="1" max="100"/></td>
+                          <td><input type="number" id="ingreso3" step="5" min="1" max="100" onblur="TotalIngreso();"/></td>
                           <td><select id="deporte3"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
-                          <td><select id="cultura3"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="embarazo3"><option value="0" selected disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="enfermedad3"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="tratamiento3"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                       </tr>
                         <tr>
-                          <td style="color:black;font-weight:bold;font-size:16px;">Adultos</td>
-                          <td><input type="number" id="edad4" step="1" min="1" max="100"/></td>
-                          <td><input type="number"  id="cantidad4" step="1" min="1" max="100"/></td>
+                          <td style="color:black;font-weight:bold;font-size:16px;">Adultos(18-54)</td>
+                          <td><input type="number"  id="cantidad4" step="1" min="1" max="100" onblur="CantidadPersonas();" /></td>
                           <td><select id="documento4"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="estudia4"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="trabaja4"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
-                          <td><input type="number" id="ingreso4" step="5" min="1" max="100"/></td>
+                          <td><input type="number" id="ingreso4" step="5" min="1" max="100" onblur="TotalIngreso();"/></td>
                           <td><select id="deporte4"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
-                          <td><select id="cultura4"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="embarazo4"><option value="0" selected disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="enfermedad4"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="tratamiento4"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                       </tr>
                         <tr>
-                          <td style="color:black;font-weight:bold;font-size:16px;">Adultos&nbsp;Mayores</td>
-                          <td><input type="number" id="edad5" step="1" min="1" max="100"/></td>
-                          <td><input type="number"  id="cantidad5" step="1" min="1" max="100"/></td>
+                          <td style="color:black;font-weight:bold;font-size:16px;">Adultos&nbsp;Mayores(55+)</td>
+                          <td><input type="number"  id="cantidad5" step="1" min="1" max="100" onblur="CantidadPersonas();" /></td>
                           <td><select id="documento5"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="estudia5"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="trabaja5"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
-                          <td><input type="number" id="ingreso5" step="5" min="1" max="100"/></td>
+                          <td><input type="number" id="ingreso5" step="5" min="1" max="100"onblur="TotalIngreso();"/></td>
                           <td><select id="deporte5"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
-                          <td><select id="cultura5"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="embarazo5"><option value="0" selected disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="enfermedad5"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="tratamiento5"><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                       </tr>
+
+
+
+                       <tr>
+                          <td style="color:dimgray;font-weight:bold;font-size:16px;">Total de Miembros</td>
+                          <td><input type="number" id="tmiembros" step="5" min="1" max="100"/></td>
+
+                          
+                          <td style="color:dimgray;font-weight:bold;font-size:16px;"></td>
+                          <td></td>
+
+
+                          <td style="color:dimgray;font-weight:bold;font-size:16px;">Total de Ingreso</td>
+                          <td><input type="number" id="tingreso" step="5" min="1" max="100"/></td>
+
+                      </tr>
+
+                      
+
+
+
+
+
                   </tbody>
 
               </table>
+              
+            <div class="form-group row">
+               
+               
+                <div class="col-md-6 text-md-left" style="">
+                    <input type="reset" value="Atras" class="btn btn-danger form-control" onclick="" style="width:300px;" />
+                </div>
+
+                 <div class="col-md-6 tex-md-right">
+                    <input type="button" value="Siguiente" class="btn btn-success form-control" onclick=""style="width:300px;" />
+                </div>
+
+            </div>
 
         </div>
     </div> 
 </div>
 
+
+
+        </div>
+  
