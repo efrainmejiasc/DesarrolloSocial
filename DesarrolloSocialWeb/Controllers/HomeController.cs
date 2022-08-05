@@ -39,9 +39,20 @@ namespace DesarrolloSocialWeb.Controllers
         }
 
         public IActionResult CargaFamiliar()
+
         {
             return View();
         }
+
+        public IActionResult Vivienda()
+        {
+            return View();
+        }
+        public IActionResult SoloParaUsodelGestorylaFundacion()
+        {
+            return View();
+        }
+
 
         [HttpGet]
         public IActionResult LoginGestor(string userMail, string password)
