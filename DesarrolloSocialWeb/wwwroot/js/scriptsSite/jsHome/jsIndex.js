@@ -4,8 +4,6 @@
 
 function Login() {
 
-    //var empresa = $('#empresa').val();
-    //var nombreEmpresa = $("#empresa option:selected").text();
     var userMail = $('#userMail').val();
     var password = $('#password').val();
     var confirmar = document.getElementById('confirmar').checked;

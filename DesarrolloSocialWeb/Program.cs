@@ -1,4 +1,8 @@
 using DesarrolloSocialModelo.DataModel;
+using DesarrolloSocialModelo.Interfaces;
+using DesarrolloSocialModelo.Repositories;
+using DesarrolloSocialNegocio.Interfaces;
+using DesarrolloSocialNegocio.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,3 +32,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+builder.Services.AddScoped<MyAppContext, MyAppContext>();
+builder.Services.AddScoped<IGestoresService, GestoresService>();
+builder.Services.AddScoped<IGestoresRerpository, GestoresRepository>();

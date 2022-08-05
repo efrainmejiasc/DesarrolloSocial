@@ -1,4 +1,5 @@
-﻿using DesarrolloSocialWeb.Models;
+﻿using DesarrolloSocialModelo.DataModel;
+using DesarrolloSocialWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Diagnostics;
@@ -40,6 +41,15 @@ namespace DesarrolloSocialWeb.Controllers
         public IActionResult CargaFamiliar()
         {
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult LoginGestor(string userMail, string password)
+        {
+            if (string.IsNullOrEmpty(userMail) || string.IsNullOrEmpty(password))
+                return Json("");
+
+            return Json("");
         }
 
         [HttpGet]
