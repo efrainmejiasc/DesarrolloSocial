@@ -38,9 +38,20 @@ namespace DesarrolloSocialWeb.Controllers
         }
 
         public IActionResult CargaFamiliar()
+
         {
             return View();
         }
+
+        public IActionResult Vivienda()
+        {
+            return View();
+        }
+        public IActionResult SoloParaUsodelGestorylaFundacion()
+        {
+            return View();
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> GetPaisesAsync()

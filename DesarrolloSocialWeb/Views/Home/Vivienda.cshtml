@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/scriptsSite/jsHome/jsResponsableDeFamilia.js"></script>
+    <script src="~/js/scriptsSite/jsHome/jsVivienda.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 }
@@ -9,47 +9,131 @@
 
 <div class="card" style="margin-top:5%;">
     <div class="card-body">
-        <div class="form-horizontal" style="color:Dimgray">
+        <div class="form-horizontal" style="color:dD8CDCA">
 
 
              <div class="col-md-8 text-md-right"> 
-                <label class="control-label">¿Tiene Tratamiento?</label>
+                <label class="control-label">Tipo de Vivienda</label>
           </div>
 
+          
              <div class="col-md-8">
-            <select id="sexo"name="sexo" class="form-control form-control-sm">
+            <select id="vivienda"name="vivienda" class="form-control form-control-sm">
                          <option value="0" disabled  selected >Seleccione...</option>
-                         <option value="1">Si</option>
-                         <option value="2">No</option>  
-                          
+                         <option value="1">Casa</option>
+                         <option value="2">Apartamento</option>  
+                         <option value="1">Habitación</option>
+                         <option value="1">Rancho</option>
+                         <option value="1">Intemperie</option>
              </select>
               </div>
 
+               <br/>
+
+               <div class="col-md-8 text-md-right"> 
+                <label class="control-label">Condición de la Vivienda</label>
+          </div>
+             <div class="col-md-8">
+            <select id="cviviend"name="cvivienda" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Muy Buena</option>
+                         <option value="2">Buena</option>  
+                         <option value="1">Regular</option>
+                         <option value="1">Mala</option>
+                         <option value="1">Muy Mala</option>
+             </select>
+              </div>
+
+              <br/>
+
+               <div class="col-md-8 text-md-right"> 
+                <label class="control-label">Requerimientos de la Vivienda</label>
+          </div>
+             <div class="col-md-8">
+            <select id="rviviend"name="rvivienda" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Ninguno</option>
+                         <option value="2">Requiere Ampliación</option>  
+                         <option value="1">Mejoras o Remodelación</option>
+                         <option value="1">Mala</option>
+                         <option value="1">Muy Mala</option>
+             </select>
+              </div>
+
+              <br/>
+              
+               <div class="col-md-8 text-md-right"> 
+                <label class="control-label">Tenencia de la Vivienda</label>
+          </div>
+             <div class="col-md-8">
+            <select id="tviviend"name="tvivienda" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Propia</option>
+                         <option value="2">Propia Pagándose</option>  
+                         <option value="1">Prestada o Cuido </option>
+                         <option value="1">Compartida</option>
+                         <option value="1">Tomada o Invadida</option>
+             </select>
+              </div>
+
+              <br/>
+
+       <div class="col-md-8 text-md-right"> 
+              <label class="control-label">Servicios Basico de Vivienda:</label>
+              </div>
+
+               <br/>
+
+              <div class="col-md-12">
+              <input type="checkbox" name="Agua" /><label class="control-label">Agua</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="checkbox" name="Electricidad" /><label class="control-label">Electricidad</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="checkbox" name="Aguas Servidas" /><label class="control-label">Aguas Servidas</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="checkbox" name="Telefonía fija" /><label class="control-label">Telefonia FIja</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="checkbox" name="Aseo urbano/Recolector de basura" /><label class="control-label">Aseo Urbano/Recolector de Basura</label>
+            </div>
+      
+
+
+
+             <br/>
+
+              <br/>
+
+                <div class="col-md-8">
+    <p align="right">Texto alineado a la derecha>  
+
+        Yo,  <input type="text" id="nombre" name="nombre"/>, Nº de Identidad <input type="text" id="cedula" name="cedula"  />,acepto y doy fe que los datos antes descritos son verdaderos; la información ha sido suministrada de manera voluntaria y sin ningún tipo de coacción, cualquier variaci{on de la misma es mi responsabilidad notificarla. Firma <input type="text" id="nombreyapellido" name="nombreyapellido"/>
+(puño y letra del entrevistado en el caso de la planilla fisica.  Para el digital, solo se colocará el nombre y apellido del entrevistado)
+
+    </p>
+
+</div>
 
 
 
 
+             <br/>
 
+              <br/>
+             
+             <div class="form-group row">
+               
+               
+                <div class="col-md-6 text-md-left" style="">
+                    <input type="reset" value="Atras" class="btn btn-danger form-control" onclick="" style="width:300px;" />
+                </div>
 
+                 <div class="col-md-6 tex-md-right">
+                    <input type="button" value="Siguiente" class="btn btn-success form-control" onclick=""style="width:300px;" />
+                </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                
             
+
+
+</div>
+
+          
         </div>
     </div> 
 </div>
