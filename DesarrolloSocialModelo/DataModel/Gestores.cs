@@ -41,7 +41,7 @@ namespace DesarrolloSocialModelo.DataModel
         public string Password { get; set; }
 
         [Column(Order = 10, TypeName = "INT")]
-        public string IdEstado { get; set; }
+        public int IdEstado { get; set; }
 
         [Column(Order = 11, TypeName = "DATETIME")]
         public DateTime FechaNacimiento { get; set; }
