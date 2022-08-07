@@ -10,5 +10,6 @@ namespace DesarrolloSocialNegocio.Interfaces
     public interface IGestoresService
     {
         bool InsertGestor(Gestores model);
+        Gestores GetGestor(string usermail, string password);
     }
 }

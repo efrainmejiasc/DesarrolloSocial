@@ -10,5 +10,6 @@ namespace DesarrolloSocialModelo.Interfaces
     public interface IGestoresRepository
     {
         Gestores InsertGestor(Gestores model);
+        Gestores GetGestor(string usermail, string password);
     }
 }

@@ -13,6 +13,23 @@ builder.Services.AddDbContext<MyAppContext>(op => op.UseSqlServer(@"Server=EMCSE
                                                       b => b.MigrationsAssembly("DesarrolloSocialModelo")));
 
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+//**************************************************************************
+builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(20);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+builder.Services.AddMvc();
+//*****************************************************************************
+
+builder.Services.AddScoped<MyAppContext, MyAppContext>();
+builder.Services.AddScoped<IGestoresService, GestoresService>();
+builder.Services.AddScoped<IGestoresRepository, GestoresRepository>();
 
 var app = builder.Build();
 
@@ -33,6 +50,4 @@ app.MapControllerRoute(
 
 app.Run();
 
-builder.Services.AddScoped<MyAppContext, MyAppContext>();
-builder.Services.AddScoped<IGestoresService, GestoresService>();
-builder.Services.AddScoped<IGestoresRerpository, GestoresRepository>();
+

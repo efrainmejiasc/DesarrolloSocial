@@ -1,4 +1,5 @@
 ﻿using DesarrolloSocialModelo.DataModel;
+using DesarrolloSocialModelo.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DesarrolloSocialModelo.Repositories
 {
-    public class GestoresRepository : IGestoresRerpository
+    public class GestoresRepository : IGestoresRepository
     {
         private readonly MyAppContext db;
         public GestoresRepository(MyAppContext _db)
@@ -21,6 +22,12 @@ namespace DesarrolloSocialModelo.Repositories
             this.db.SaveChanges();
 
             return model;
+        }
+
+        public Gestores GetGestor(string usermail , string password)
+        {
+            var gestor = this.db.Gestores.Where(x => x.Email == usermail && x.Password == password).FirstOrDefault();
+            return gestor;
         }
 
     }

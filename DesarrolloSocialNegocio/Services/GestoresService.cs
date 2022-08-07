@@ -26,5 +26,10 @@ namespace DesarrolloSocialNegocio.Services
 
             return resultado;
         }
+
+        public Gestores  GetGestor(string usermail, string password)
+        {
+            return this.gestoresRepository.GetGestor(usermail, password);
+        }
     }
 }
