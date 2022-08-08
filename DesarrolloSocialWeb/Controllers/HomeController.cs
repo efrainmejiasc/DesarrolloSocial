@@ -33,7 +33,8 @@ namespace DesarrolloSocialWeb.Controllers
 
         public IActionResult Index()
         {
-            return RedirectToAction("Index","Login");
+            // return RedirectToAction("Index","Login");
+            return View();
         }
 
         public IActionResult Registro()
