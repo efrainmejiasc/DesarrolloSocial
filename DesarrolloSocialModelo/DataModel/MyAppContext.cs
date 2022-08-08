@@ -16,5 +16,6 @@ namespace DesarrolloSocialModelo.DataModel
 
         public virtual DbSet<RespuestasDeFormulario> RespuestasDeFormulario { get; set; }
         public virtual DbSet<Gestores> Gestores { get; set; }
+        public virtual DbSet<Roles> Roles { get; set; }
     }
 }

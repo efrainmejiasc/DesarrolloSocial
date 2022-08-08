@@ -52,6 +52,8 @@ namespace DesarrolloSocialModelo.DataModel
         [Column(Order = 13, TypeName = "VARCHAR(50)")]
         public string NumeroDocumento{ get; set; }
 
+        [Column(Order = 14, TypeName = "INT")]
+        public int IdRol { get; set; }
 
     }
 }

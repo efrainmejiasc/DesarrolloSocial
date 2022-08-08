@@ -3,6 +3,7 @@ using DesarrolloSocialModelo.Interfaces;
 using DesarrolloSocialModelo.Repositories;
 using DesarrolloSocialNegocio.Interfaces;
 using DesarrolloSocialNegocio.Services;
+using DesarrolloSocialWeb.Filters;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +30,11 @@ builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<MyAppContext, MyAppContext>();
 builder.Services.AddScoped<IGestoresService, GestoresService>();
 builder.Services.AddScoped<IGestoresRepository, GestoresRepository>();
+
+builder.Services.AddControllers(config =>
+{
+    config.Filters.Add(new AuthorizationFilter());
+});
 
 var app = builder.Build();
 

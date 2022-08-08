@@ -87,6 +87,9 @@ csharp_style_conditional_delegate_call = true:suggestion
 csharp_style_prefer_parameter_null_checking = true:suggestion
 csharp_using_directive_placement = outside_namespace:silent
 
+# IDE0052: Quitar miembros privados no leídos
+dotnet_diagnostic.IDE0052.severity = none
+
 [*.vb]
 #### Estilos de nomenclatura ####
 
