@@ -8,7 +8,12 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+/*builder.Services.AddControllers(config =>
+{
+    config.Filters.Add(new CustomAuthenticationFilter());
+    config.Filters.Add(new CustomAuthorizationFilter());
+});*/
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddRazorPages();
@@ -31,10 +36,7 @@ builder.Services.AddScoped<MyAppContext, MyAppContext>();
 builder.Services.AddScoped<IGestoresService, GestoresService>();
 builder.Services.AddScoped<IGestoresRepository, GestoresRepository>();
 
-builder.Services.AddControllers(config =>
-{
-    config.Filters.Add(new AuthorizationFilter());
-});
+
 
 var app = builder.Build();
 

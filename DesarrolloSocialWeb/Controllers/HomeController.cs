@@ -8,9 +8,12 @@ using Microsoft.AspNetCore.Http;
 using DesarrolloSocialNegocio.Interfaces;
 using DesarrolloSocialWeb.Models;
 using DesarrolloSocialModelo.DataModel;
+using DesarrolloSocialWeb.Filters;
+using System.Web.Http.Filters;
 
 namespace DesarrolloSocialWeb.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -30,7 +33,7 @@ namespace DesarrolloSocialWeb.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index","Login");
         }
 
         public IActionResult Registro()

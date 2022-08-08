@@ -90,6 +90,9 @@ csharp_using_directive_placement = outside_namespace:silent
 # IDE0052: Quitar miembros privados no leídos
 dotnet_diagnostic.IDE0052.severity = none
 
+# CS0114: El miembro oculta el miembro heredado. Falta una contraseña de invalidación
+dotnet_diagnostic.CS0114.severity = none
+
 [*.vb]
 #### Estilos de nomenclatura ####
 
