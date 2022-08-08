@@ -7,6 +7,7 @@
 }
 <script>
     var urlLogin = '@Url.Action("LoginGestor","Home")';
+    var urlRegistroGestor = '@Url.Action("RegistroGestor","About")';
 </script>
 
 <div class="card" style="margin-top:5%;">
@@ -47,6 +48,13 @@
                     <input type="reset" value="Cancelar" class="btn btn-danger form-control" onclick="Reset()" style="width:200px;" />
                 </div>
             </div>
+               
+             <br /><br />
+                 <div class="text-center">
+                      <div class="col-md-3 ">
+                         <a href='@Url.Action("RegistroGestor","About")'>¿Eres gestor? Registrate, Aqui..</a>
+                      </div> 
+                  </div>
 
         </div>
     </div>

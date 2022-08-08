@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Http;
 using DesarrolloSocialNegocio.Interfaces;
 using DesarrolloSocialWeb.Models;
+using DesarrolloSocialModelo.DataModel;
 
 namespace DesarrolloSocialWeb.Controllers
 {
@@ -15,12 +16,16 @@ namespace DesarrolloSocialWeb.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IGestoresService _gestoresService;
         private readonly IHttpContextAccessor _httpContext;
+        private readonly Gestores usuarioGestor;
 
         public HomeController(ILogger<HomeController> logger, IGestoresService gestoresService, IHttpContextAccessor httpContext)
         {
             this._logger = logger;
             this._gestoresService = gestoresService;
             this._httpContext = httpContext;
+
+            if (!string.IsNullOrEmpty(_httpContext.HttpContext.Session.GetString("GestorLogin")))
+                this.usuarioGestor = JsonConvert.DeserializeObject<Gestores>(_httpContext.HttpContext.Session.GetString("GestorLogin"));
         }
 
         public IActionResult Index()
@@ -117,6 +122,7 @@ namespace DesarrolloSocialWeb.Controllers
             return Json(paises);
         }
 
+
         [HttpGet]
         public async Task<IActionResult> GetCiudadesPaisAsync(int id)
         {
@@ -145,7 +151,11 @@ namespace DesarrolloSocialWeb.Controllers
             return Json(ciudades);
         }
 
-
+        [HttpGet]
+        public IActionResult GetUsuarioGestorLogger()
+        {
+            return Json(this.usuarioGestor);
+        }
 
 
 
