@@ -5,3 +5,208 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 }
+
+<div class="card" style="margin-top:5%;">
+    <div class="card-body">
+        <div class="form-horizontal" style="color:dD8CDCA">
+
+
+              <div class="col-md-3 text-md-right">
+                <label class="control-label">Nombres</label>
+          </div>
+             <div class="col-md-8">
+                <input type="text" id="nombre" name="nombre" class="form form-control" />
+             </div>
+
+                <br />
+
+           <div class="col-md-3 text-md-right">
+                <label class="control-label">Apellidos</label>
+          </div>
+             <div class="col-md-8">
+                <input type="text" id="apellido" name="apellido" class="form form-control" />
+             </div>
+
+                <br />
+
+               <div class="col-md-3 text-md-right">
+                <label class="control-label">Nacionalidad</label>
+          </div>
+             <div class="col-md-8">
+                <input type="text" id="nacionalidad" name="nacionalidad" class="form form-control" />
+             </div>
+             <br />
+             
+         <div class="col-md-12 text-left">
+
+             <div class="item form-group row col-md-10">
+
+               <div class="col-md-2">
+               <label class="control-label">Documento</label>
+              </div>
+                <div class="col-md-3">
+               <select id="sexo"name="sexo" class="form-control">
+                         <option value="0" disabled  selected >Seleccione Documento...</option>
+                         <option value="1">Cédula</option>
+                         <option value="2">Pasaporte</option>  
+                         <option value="3">Rif</option>  
+                         <option value="4">Otro</option>  
+                </select>
+              </div>
+
+                 <br />
+
+               <div class="col-md-2">
+                <label class="control-label">Numero</label>
+              </div>
+                <div class="col-md-3">
+                <input type="text" id="numerodocument" name="numerodocument" class="form form-control" />
+              </div>
+             </div>
+
+                <br />
+
+          <div class="col-md-3 text-md-right">
+                <label class="control-label">Lugar de Nacimiento</label>
+          </div>
+             <div class="col-md-8">
+                <input type="text" id="lugarnacimiento" name="lugarnacimiento" class="form form-control" />
+             </div>
+
+                <br />
+
+                  <div class="col-md-3 text-md-right">
+                    <label class="control-label">Fecha de Nacimiento</label>
+                </div>
+                <div class="col-md-8">                   
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form form-control" />
+                </div>
+
+                   <br />
+
+         <div class="col-md-3 text-md-right">
+                <label class="control-label">Edad</label>
+          </div>
+             <div class="col-md-8">
+                <input type="text" id="edad" name="edad" class="form form-control" />
+             </div>
+
+                <br />
+
+               <div class="col-md-8">
+                <label class="control-label">Nivel de Instrucción</label>
+          </div>
+           <div class="col-md-8">
+            <select id="sexo"name="sexo" class="form-control form-control-sm">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">Primaria</option>
+                         <option value="2">Secundaria</option>  
+                         <option value="3">Pre-Grado</option>  
+                         <option value="4">Post-Grado</option>  
+                         <option value="5">Iletrado</option>  
+                         <option value="6">Otro/Especifique</option>  
+                </select>
+
+                   <br />
+
+                 <div class="col-md-12 text-md-right">
+                    <label class="control-label" style=";font-weight:bold;font-size:16px;">Dirección de Domicilio</label>
+                </div>
+
+                   <br />
+
+                <div class="col-md-3 text-md-right">
+                    <label class="control-label">País</label>
+                </div>
+                  <div class="col-md-8">
+                    <select id="pais" name="pais" class="form-control form-control-sm"  onchange="    GetCiudadesPais();" required> 
+                    </select>
+                </div>
+
+                   <br />
+
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Estado/Departamento</label>
+                </div>
+                  <div class="col-md-8">
+                    <select id="estado" name="estado" class="form-control form-control-sm"  required> </select>
+                </div>
+
+                   <br />
+
+                <div class="col-md-3 text-md-right">
+                    <label class="control-label">Ciudad</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="ciudad" name="ciudad" class="form form-control" />
+                </div>
+                   <br />
+
+                 <div class="col-md-3 text-md-right">
+                    <label class="control-label">Municipio/Provincia</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="text" id="municipio_provincia" name="municipio_provincia" class="form form-control" />
+                </div>
+
+                   <br />
+
+                  <div class="col-md-3 text-md-right">
+                    <label class="control-label">Telefono</label>
+                </div>
+
+                 <div class="form-group row col-md-12">
+
+                <div class="col-md-1 text-md-left">
+                    <input type="text" id="codigo" name="codigo" class="form form-control" placeholder="+58" />
+                </div>
+
+               <div class="col-md-3 text-md-right">
+                    <input type="text" id="telefono" name="telefono" class="form form-control" placeholder="424-331-21-31"/>
+                </div>
+
+
+             </div>
+
+                <br />
+
+                  <div class="col-md-4 text-md-right">
+                    <label class="control-label">Correo Electronico</label>
+                </div>
+                  <div class="col-md-4">
+                    <input type="email" id="correo" name="correo" class="form form-control" placeholder="example@gmail.com" /> 
+                </div>
+
+
+
+                  <div class="col-md-3 text-md-right">
+                    <label class="control-label">Contraseña</label>
+                </div>
+                  <div class="col-md-8">
+                    <select id="Contraseña" name="contraseña" class="form-control form-control-sm"  required> </select>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             </div>
+    </div> 
+</div>
+
