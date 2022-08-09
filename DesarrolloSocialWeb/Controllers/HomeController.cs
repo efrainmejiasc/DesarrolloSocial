@@ -13,7 +13,7 @@ using System.Web.Http.Filters;
 
 namespace DesarrolloSocialWeb.Controllers
 {
-    [CustomAuthenticationFilter]
+    //[CustomAuthenticationFilter]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
