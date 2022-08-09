@@ -13,7 +13,7 @@ using System.Web.Http.Filters;
 
 namespace DesarrolloSocialWeb.Controllers
 {
-    
+    [CustomAuthenticationFilter]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -69,34 +69,6 @@ namespace DesarrolloSocialWeb.Controllers
         }
 
 
-        [HttpGet]
-        public IActionResult LoginGestor(string userMail, string password)
-        {
-            var respuesta = new RespuestaModel();
-            respuesta.Estado = false;
-            respuesta.Mensaje = "No autorizado";
-            if (string.IsNullOrEmpty(userMail) || string.IsNullOrEmpty(password))
-                return Json(respuesta);
-
-            var passwordEncriptado = DesarrolloSocialNegocio.Helpers.Helper.EnCodeBase64(userMail + password);
-
-            try
-            {
-                var gestor = this._gestoresService.GetGestor(userMail, passwordEncriptado);
-                if (gestor != null)
-                {
-                    respuesta.Estado = true;
-                    respuesta.Mensaje = "Autorizado";
-                    _httpContext.HttpContext.Session.SetString("GestorLogin", JsonConvert.SerializeObject(gestor));
-                }
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            return Json(respuesta);
-        }
 
         [HttpGet]
         public async Task<IActionResult> GetPaisesAsync()
