@@ -44,7 +44,7 @@ function GetCiudadesPais() {
     return false;
 }
 
-function ResgistroGestores() {
+function RegistroGestores() {
 
     var nombre = $('#nombre').val();
     var apellido = $('#apellido').val();
@@ -65,7 +65,7 @@ function ResgistroGestores() {
     var contraseña = $('#contraseña').val();
     var confirmarcontraseña = $('#confirmarcontraseña').val();
 
-    //var confirmar = document.getElementById('confirmar').checked;
+    var confirmar = document.getElementById('confirmar').checked;
 
     if (nombre === '' || apellido === '' || nacionalidad === '' || document === '' || numeroDocument === '' ||
         lugarNacimiento === '' || fechaNacimiento === '' || edad === '' || nivelInstruccion === '' || pais === '' ||
@@ -120,7 +120,9 @@ function ResgistroGestores() {
                 toastr.warning("No autorizado");
         }
     });
+
     return false;
+}
 
 function EmailValido(mail) {
     const regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -128,4 +130,3 @@ function EmailValido(mail) {
     }
 
 
-}
