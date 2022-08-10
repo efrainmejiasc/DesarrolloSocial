@@ -57,5 +57,18 @@ namespace DesarrolloSocialWeb.Controllers
 
             return Json(respuesta);
         }
+
+
+        [HttpGet]
+        public IActionResult GetUsuarioLogeado()
+        {
+            var usuarioLogeado = new Gestores();
+
+            if (!string.IsNullOrEmpty(_httpContext.HttpContext.Session.GetString("GestorLogin")))
+                usuarioLogeado = JsonConvert.DeserializeObject<Gestores>(_httpContext.HttpContext.Session.GetString("GestorLogin"));
+
+
+            return Json(usuarioLogeado);
+        }
     }
 }

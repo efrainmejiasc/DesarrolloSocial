@@ -31,4 +31,8 @@
     <ProjectReference Include="..\DesarrolloSocialNegocio\DesarrolloSocialNegocio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\content\" />
+  </ItemGroup>
+
 </Project>
