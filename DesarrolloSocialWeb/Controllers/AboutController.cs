@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DesarrolloSocialModelo.DataModel;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace DesarrolloSocialWeb.Controllers
 {
@@ -14,6 +16,13 @@ namespace DesarrolloSocialWeb.Controllers
 
         public IActionResult RegistroGestor()
         {
+            return View();
+        }
+
+
+        public IActionResult CrearRegistroGestor(string gestorModelStr)
+        {
+            var gestorModel = JsonConvert.DeserializeObject<Gestores>(gestorModelStr);
             return View();
         }
     }

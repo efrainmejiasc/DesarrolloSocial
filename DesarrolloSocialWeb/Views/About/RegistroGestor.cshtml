@@ -6,6 +6,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 }
 
+<script>
+    var urlCrearRegistroGestor = '@Url.Action("CrearRegistroGestor","About")';
+      var urlPaises = '@Url.Action("GetPaises","Home")';
+    var urlCiudadesPais = '@Url.Action("GetCiudadesPais","Home")';
+</script>
+
+
+
 <div class="card" style="margin-top:5%;">
     <div class="card-body">
         <div class="form-horizontal" style="color:dD8CDCA">
@@ -18,7 +26,7 @@
                 <input type="text" id="nombre" name="nombre" class="form form-control" />
              </div>
 
-                <br />
+          <br />
 
            <div class="col-md-3 text-md-right">
                 <label class="control-label">Apellidos</label>
@@ -27,25 +35,29 @@
                 <input type="text" id="apellido" name="apellido" class="form form-control" />
              </div>
 
-                <br />
+         <br />
 
                <div class="col-md-3 text-md-right">
                 <label class="control-label">Nacionalidad</label>
           </div>
              <div class="col-md-8">
-                <input type="text" id="nacionalidad" name="nacionalidad" class="form form-control" />
+                <select id="nacionalidad"name="nacionalidad" class="form-control">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">V</option>
+                         <option value="2">E</option>  
+                        
+                </select>
              </div>
              <br />
              
          <div class="col-md-12 text-left">
-
              <div class="item form-group row col-md-10">
 
                <div class="col-md-2">
                <label class="control-label">Documento</label>
               </div>
                 <div class="col-md-3">
-               <select id="sexo"name="sexo" class="form-control">
+               <select id="document"name="document" class="form-control">
                          <option value="0" disabled  selected >Seleccione Documento...</option>
                          <option value="1">Cédula</option>
                          <option value="2">Pasaporte</option>  
@@ -57,10 +69,10 @@
                  <br />
 
                <div class="col-md-2">
-                <label class="control-label">Numero</label>
+                <label class="control-label">Numero de Documento</label>
               </div>
                 <div class="col-md-3">
-                <input type="text" id="numerodocument" name="numerodocument" class="form form-control" />
+                <input type="text" id="numeroDocument" name="numeroDocument" class="form form-control" />
               </div>
              </div>
 
@@ -70,7 +82,7 @@
                 <label class="control-label">Lugar de Nacimiento</label>
           </div>
              <div class="col-md-8">
-                <input type="text" id="lugarnacimiento" name="lugarnacimiento" class="form form-control" />
+                <input type="text" id="lugarNacimiento" name="lugarNacimiento" class="form form-control" />
              </div>
 
                 <br />
@@ -88,7 +100,7 @@
                 <label class="control-label">Edad</label>
           </div>
              <div class="col-md-8">
-                <input type="text" id="edad" name="edad" class="form form-control" />
+                 <input type="number" id="edad" step="1" min="1" max="120"/> 
              </div>
 
                 <br />
@@ -97,7 +109,7 @@
                 <label class="control-label">Nivel de Instrucción</label>
           </div>
            <div class="col-md-8">
-            <select id="sexo"name="sexo" class="form-control form-control-sm">
+            <select id="nivelInstruccion"name="nivelInstruccion" class="form-control form-control-sm">
                          <option value="0" disabled  selected >Seleccione...</option>
                          <option value="1">Primaria</option>
                          <option value="2">Secundaria</option>  
@@ -106,6 +118,8 @@
                          <option value="5">Iletrado</option>  
                          <option value="6">Otro/Especifique</option>  
                 </select>
+
+                </div>
 
                    <br />
 
@@ -146,7 +160,7 @@
                     <label class="control-label">Municipio/Provincia</label>
                 </div>
                   <div class="col-md-8">
-                    <input type="text" id="municipio_provincia" name="municipio_provincia" class="form form-control" />
+                    <input type="text" id="municipioProvincia" name="municipioProvincia" class="form form-control" />
                 </div>
 
                    <br />
@@ -154,18 +168,15 @@
                   <div class="col-md-3 text-md-right">
                     <label class="control-label">Telefono</label>
                 </div>
-
                  <div class="form-group row col-md-12">
-
-                <div class="col-md-1 text-md-left">
+                <div class="col-md-2 text-md-left">
                     <input type="text" id="codigo" name="codigo" class="form form-control" placeholder="+58" />
                 </div>
-
                <div class="col-md-3 text-md-right">
                     <input type="text" id="telefono" name="telefono" class="form form-control" placeholder="424-331-21-31"/>
                 </div>
 
-
+                </div>
              </div>
 
                 <br />
@@ -177,36 +188,47 @@
                     <input type="email" id="correo" name="correo" class="form form-control" placeholder="example@gmail.com" /> 
                 </div>
 
-
+                 <br />
 
                   <div class="col-md-3 text-md-right">
                     <label class="control-label">Contraseña</label>
                 </div>
                   <div class="col-md-8">
-                    <select id="Contraseña" name="contraseña" class="form-control form-control-sm"  required> </select>
+                    <input type="password" id="contraseña" name="contraseña" class="form form-control"/>
+                </div>
+
+                 <br />
+
+                <div class="col-md-3 text-md-right">
+                    <label class="control-label"> Confirmar Contraseña</label>
+                </div>
+                  <div class="col-md-8">
+                    <input type="password" id="confirmarContraseña" name="confirmarContraseña" class="form form-control"/>
                 </div>
 
 
+                  <br />
 
+                 <div class="col-md-3 text-md-right">
+                    <input type="checkbox" id="confirmar" class="" form-check-input> <br>
+                </div>
+                <div class="col-md-2">
+                    <label class="control-label">Confirmar</label>
+                </div>
+                 <br />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <div class="form-group row">
+                <div class="col-md-6 text-md-left" style="">
+                    <input type="reset" value="Cancelar" class="btn btn-danger form-control" onclick="" style="width:300px;" />
+                </div>
+                 <div class="col-md-6 tex-md-right">
+                    <input type="button" value="Guardar" class="btn btn-success form-control" onclick="ResgistroGestores();"style="width:300px;" />
+                </div>
 
 
              </div>
     </div> 
+</div>
+   </div> 
 </div>
 

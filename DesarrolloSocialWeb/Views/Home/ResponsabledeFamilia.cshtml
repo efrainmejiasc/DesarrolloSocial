@@ -32,7 +32,12 @@
                 <label class="control-label">Nacionalidad</label>
           </div>
              <div class="col-md-8">
-                <input type="text" id="nacionalidad" name="nacionalidad" class="form form-control" />
+                 <select id="nacionalidad"name="nacionalidad" class="form-control">
+                         <option value="0" disabled  selected >Seleccione...</option>
+                         <option value="1">V</option>
+                         <option value="2">E</option>  
+                      
+                </select>
              </div>
              <br />
              
@@ -83,7 +88,7 @@
                 <label class="control-label">Edad</label>
           </div>
              <div class="col-md-8">
-                <input type="text" id="edad" name="edad" class="form form-control" />
+               <input type="number" id="edad" step="1" min="1" max="120"/> 
              </div>
 
 

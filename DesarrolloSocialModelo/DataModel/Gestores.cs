@@ -59,7 +59,14 @@ namespace DesarrolloSocialModelo.DataModel
         public int Edad { get; set; }
 
         [Column(Order = 16, TypeName = "VARCHAR(50)")]
-        public string NiveldeInstruccion { get; set; }
+        public string NivelInstruccion { get; set; }
+
+        [Column(Order = 17, TypeName = "VARCHAR(50)")]
+        public string LugarNacimiento { get; set; }
+
+        [Column(Order = 18, TypeName = "VARCHAR(50)")]
+        public string MunicioProvincia { get; set; }
+
 
 
 

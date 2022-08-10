@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers(config =>
+/*builder.Services.AddControllers(config =>
 {
     config.Filters.Add(new CustomAuthenticationFilter());
     //config.Filters.Add(new CustomAuthorizationFilter());
-});
+});*/
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();

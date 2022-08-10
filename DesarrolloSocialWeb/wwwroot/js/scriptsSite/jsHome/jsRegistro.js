@@ -14,24 +14,7 @@ function FechaActual() {
 
     return date;
 }
-function GetExistenciaArticuloBodega_(id) {
-
-    console.log(id);
-
-    $.ajax({
-        type: "GET",
-        url: urlGetStockProductoBodega,
-        data: { idArticulo: id },
-        datatype: "json",
-        success: function (data) {
  
-            toastr.success("Exito");
-            toastr.warning("Advertencia");
-            toastr.error("Error");
-        }
-    });
-    console.log(' ');
-} 
 
 function GetPaises() {
 
