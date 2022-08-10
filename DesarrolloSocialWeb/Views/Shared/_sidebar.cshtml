@@ -1,7 +1,7 @@
 ﻿
 
 @{ 
-
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
 }
 
         @*<nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -141,7 +141,7 @@
 
     function GetUsuarioLogeado() {
 
-        var urlGetUsuarioLogeado = '@Url.Action("GetUsuarioLogeado,Login")';
+        var urlGetUsuarioLogeado = '@Url.Action("GetUsuarioLogeado","Login")';
     $.ajax({
         type: "GET",
         url: urlGetUsuarioLogeado,
