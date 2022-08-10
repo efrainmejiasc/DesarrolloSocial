@@ -11,7 +11,7 @@ namespace DesarrolloSocialModelo.DataModel
     [Table("Gestores")]
     public  class Gestores
     {
-        [Key]
+      
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column(Order = 1, TypeName = "INT")]
         public int Id { get; set; }
@@ -22,6 +22,7 @@ namespace DesarrolloSocialModelo.DataModel
         [Column(Order = 3, TypeName = "VARCHAR(100)")]
         public string Apellidos { get; set; }
 
+        [Key]
         [Column(Order = 4, TypeName = "VARCHAR(50)")]
         public string Email { get; set; }
 
@@ -65,11 +66,7 @@ namespace DesarrolloSocialModelo.DataModel
         public string LugarNacimiento { get; set; }
 
         [Column(Order = 18, TypeName = "VARCHAR(50)")]
-        public string MunicioProvincia { get; set; }
-
-
-
-
+        public string MunicipioProvincia { get; set; }
 
     }
 }

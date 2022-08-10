@@ -25,10 +25,10 @@ function Login() {
         success: function (data) {
             console.log(data);
             if (data.estado) {
-                toastr.success('Autorizado')
+                toastr.success(data.mensaje)
             }
             else
-                toastr.warning("No autorizado");
+                toastr.warning(data.mensaje);
         }
     });
     return false;

@@ -52,29 +52,31 @@ function RegistroGestores() {
     var document = $('#document option:selected').text();
     var numeroDocument = $('#numeroDocument').val();
     var lugarNacimiento = $('#lugarNacimiento').val();
-    var fechaNacimiento = $('fechaNacimiento').val();
+    var fechaNacimiento = $('#fechaNacimiento').val();
     var edad = $('#edad').val();
     var nivelInstruccion = $('#nivelInstruccion option:selected').text();
     var pais = $('#pais').val();
     var estado = $('#estado').val();
     var ciudad = $('#ciudad').val();
     var municipioProvincia = $('#municipioProvincia').val();
-    var codigo = $('codigo').val();
+    var codigo = $('#codigo').val();
     var telefono = $('#telefono').val();
-    var correo = $('#correo').val();
+    var email = $('#correo').val();
     var contraseña = $('#contraseña').val();
-    var confirmarcontraseña = $('#confirmarcontraseña').val();
+    var confirmarContraseña = $('#confirmarContraseña').val();
+    //var confirmar1 = document.getElementById("confirmar").checked;
+    var confirmar = $('#confirmar').prop('checked');
+    var tipoDocumento = $('#tipoDocumento').val();
 
-    var confirmar = document.getElementById('confirmar').checked;
 
     if (nombre === '' || apellido === '' || nacionalidad === '' || document === '' || numeroDocument === '' ||
         lugarNacimiento === '' || fechaNacimiento === '' || edad === '' || nivelInstruccion === '' || pais === '' ||
-        estado === '' || ciudad === '' || municipioProvincia === '' || codigo === '' || telefono === '' || correo === '' || contraseña === '' || confirmarcontraseña === '' || !confirmar)
+        estado === '' || ciudad === '' || municipioProvincia === '' || codigo === '' || telefono === '' || email === '' || contraseña === '' || confirmarContraseña === ''|| !confirmar )
     {
         toastr.warning("Todos los campos son requeridos");
         return false;
     }
-    else if (!EmailValido(correo)) {
+    else if (!EmailValido(email)) {
         toastr.warning("No es una direccion email valida");
         return false;
     }
@@ -87,7 +89,7 @@ function RegistroGestores() {
         Nombres : nombre,
         Apellidos : apellido,
         Nacionalidad : nacionalidad,
-        Documento : document,
+        TipoDocumento : document,
         NumeroDocumento : numeroDocument,
         LugarNacimiento : lugarNacimiento,
         FechaNacimiento : fechaNacimiento,
@@ -98,7 +100,7 @@ function RegistroGestores() {
         Ciudad : ciudad,
         MunicipioProvincia : municipioProvincia,
         Telefono : codigo + " " + telefono,
-        Correo : correo,
+        Email : email,
         Password : contraseña,
     };
    
@@ -114,10 +116,10 @@ function RegistroGestores() {
         success: function (data) {
             console.log(data);
             if (data.estado) {
-                toastr.success('Autorizado')
+                toastr.success(data.mensaje)
             }
             else
-                toastr.warning("No autorizado");
+                toastr.warning(data.mensaje);
         }
     });
 

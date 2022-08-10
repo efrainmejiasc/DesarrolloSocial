@@ -52,6 +52,7 @@ namespace DesarrolloSocialWeb.Controllers
             }
             catch (Exception ex)
             {
+                respuesta.Mensaje = ex.Message;
                 Console.WriteLine(ex.Message);
             }
 
