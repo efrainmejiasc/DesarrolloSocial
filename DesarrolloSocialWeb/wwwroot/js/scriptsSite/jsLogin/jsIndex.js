@@ -26,6 +26,7 @@ function Login() {
             console.log(data);
             if (data.estado) {
                 toastr.success(data.mensaje)
+                setTimeout(RedirLogin, 2000);
             }
             else
                 toastr.warning(data.mensaje);
@@ -38,5 +39,9 @@ function Login() {
 function EmailValido(mail) {
     const regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(mail);
+}
+
+function RedirLogin() {
+    window.location.href = 'urlPrincipal';
 }
 
