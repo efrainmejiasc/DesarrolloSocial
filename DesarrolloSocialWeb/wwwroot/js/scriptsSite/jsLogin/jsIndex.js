@@ -42,6 +42,6 @@ function EmailValido(mail) {
 }
 
 function RedirLogin() {
-    window.location.href = 'urlPrincipal';
+    window.location.href = urlPrincipal;
 }
 

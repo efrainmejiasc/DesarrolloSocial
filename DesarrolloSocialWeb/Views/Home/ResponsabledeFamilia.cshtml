@@ -9,7 +9,7 @@
 
 <div class="card" style="margin-top:5%;">
     <div class="card-body">
-        <div class="form-horizontal" style="color:Dimgray">
+        <div class="form-horizontal" style="olor:dD8CDCA">
 
        
 
@@ -28,7 +28,7 @@
                 <input type="text" id="apellido" name="apellido" class="form form-control" />
              </div>
 
-               <div class="col-md-3 text-md-right">
+           <div class="col-md-3 text-md-right">
                 <label class="control-label">Nacionalidad</label>
           </div>
              <div class="col-md-8">
@@ -41,15 +41,19 @@
              </div>
              <br />
              
-         <div class="col-md-12 text-left">
+         <div class="col-md-8 text-left">
 
-             <div class="item form-group row col-md-10">
+             <div class="item form-group row col-md-8">
 
                <div class="col-md-2">
                <label class="control-label">Documento</label>
+
               </div>
-                <div class="col-md-3">
-               <select id="sexo"name="sexo" class="form-control">
+                    
+
+
+                <div class="col-md-4">
+               <select id="tipodocumento"name="tipodocumento" class="form-control">
                          <option value="0" disabled  selected >Seleccione Documento...</option>
                          <option value="1">Cédula</option>
                          <option value="2">Pasaporte</option>  
@@ -58,16 +62,19 @@
                 </select>
               </div>
 
-               <div class="col-md-2">
-                <label class="control-label">Numero</label>
-              </div>
+                   
 
-                <div class="col-md-3">
+               <div class="col-md-2">
+                <label class="control-label">Número de Documento</label>
+              </div>
+                    
+                <div class="col-md-4">
                 <input type="text" id="numerodocument" name="numerodocument" class="form form-control" />
               </div>
              </div>
 
          </div>
+
 
 
           <div class="col-md-3 text-md-right">
@@ -77,19 +84,26 @@
                 <input type="text" id="lugarnacimiento" name="lugarnacimiento" class="form form-control" />
              </div>
 
-                  <div class="col-md-3 text-md-right">
+           <div class="col-md-8 text-left">
+
+                <div class="item form-group row col-md-6">
+
+                  <div class="col-md-2 text-md-right">
                     <label class="control-label">Fecha de Nacimiento</label>
                 </div>
-                <div class="col-md-8">                   
+                <div class="col-md-4">                   
                     <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form form-control" />
                 </div>
 
-         <div class="col-md-3 text-md-right">
+              <div class="col-md-2 text-md-right">
                 <label class="control-label">Edad</label>
-          </div>
+              </div>
              <div class="col-md-8">
                <input type="number" id="edad" step="1" min="1" max="120"/> 
              </div>
+
+            </div>
+          </div>   
 
 
            <div class="col-md-8">
@@ -133,11 +147,7 @@
                          <option value="5">Iletrado</option>  
                          <option value="6">Otro/Especifique</option>  
                 </select>
-
-                
-             <div class="col-md-12">
-                <input type="text" id="especifiqueinstruccion" name="especifique" class="form form-control" />
-             </div>
+           
 
              </div>
  
@@ -212,12 +222,12 @@
              </select>
               </div>
 
-               <div class="col-md-3 text-md-right">
+            <div class="col-md-3 text-md-right">
                 <label class="control-label">Nº de Hijos</label>
-          </div>
-             <div class="col-md-8">
-                <input type="text" id="n°hijos" name="n°hijos" class="form form-control" />
-             </div>
+            </div>
+            <div class="col-md-8">
+                <input type="number" id="cantidad" step="1" min="1" max="25" />
+            </div>
 
                 <div class="col-md-8">
                 <label class="control-label">¿Tiene Alguna Discapacidad?</label>
@@ -233,10 +243,10 @@
             
              
            <div class="col-md-8">
-                <label class="control-label" id="lblTiposDiscapacidad" style="display:none;">Tipo Discapacidad</label>
+                <label class="control-label">Tipo Discapacidad</label>
           </div>
             <div class="col-md-8">
-            <select id="tiposDiscapacidad"name="tiposDiscapacidad" class="form-control form-control-sm" style="display:none;">
+                <select id="discapacidad" name="discapacidad" class="form-control form-control-sm" onchange="    MostrarDiscapacidad();">
                          <option value="0" disabled  selected >Seleccione Tipo ..</option>
                          <option value="1">Psiquica (Mental, Intelectual)</option>
                          <option value="2">Sensorial (Visual,Auditiva,Lenguaje)</option>  
@@ -274,11 +284,18 @@
              </select>
               </div>
 
-          <div class="col-md-8 text-md-right"> 
+            <div class="col-md-8">
+
+                <input type="text" id="tipoenfermedad" name="tipoenfermedad" class="form form-control" placeholder="Especifique" />
+            </div>
+
+           
+          <div class="col-md-12 text-md-right">
+              
                 <label class="control-label">¿Tiene Tratamiento?</label>
           </div>
-
-             <div class="col-md-8">
+          
+             <div class="col-md-2">
             <select id="sexo"name="sexo" class="form-control form-control-sm">
                          <option value="0" disabled  selected >Seleccione...</option>
                          <option value="1">Si</option>
@@ -286,8 +303,15 @@
                           
              </select>
               </div>
+           
+           
+            <div class="col-md-8">
 
-        
+            <input type="text" id="tipotratamiento" name="tipotratamiento" class="form form-control" placeholder="Especifique" />
+        </div>
+            
+
+            <br />
 
              <div class="form-group row">
                 <div class="col-md-6 text-md-left" style="">
