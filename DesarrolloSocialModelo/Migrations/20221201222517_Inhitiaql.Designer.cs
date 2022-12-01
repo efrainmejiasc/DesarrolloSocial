@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DesarrolloSocialModelo.Migrations
 {
     [DbContext(typeof(MyAppContext))]
-    [Migration("20220810114946_errorBrusmary")]
-    partial class errorBrusmary
+    [Migration("20221201222517_Inhitiaql")]
+    partial class Inhitiaql
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,98 @@ namespace DesarrolloSocialModelo.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("DesarrolloSocialModelo.DataModel.DatosPrincipalesRG", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INT")
+                        .HasColumnOrder(1);
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Avenida")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)")
+                        .HasColumnOrder(10);
+
+                    b.Property<string>("Ciudad")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(5);
+
+                    b.Property<string>("CodigoPostal")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(7);
+
+                    b.Property<string>("Correo")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(17);
+
+                    b.Property<string>("EdifioCasa")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR (50)")
+                        .HasColumnOrder(11);
+
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)")
+                        .HasColumnOrder(4);
+
+                    b.Property<DateTime>("FechaRegistro")
+                        .HasColumnType("DATETIME")
+                        .HasColumnOrder(2);
+
+                    b.Property<string>("Municipio")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(6);
+
+                    b.Property<string>("Numerodecasa")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(13);
+
+                    b.Property<string>("Pais")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)")
+                        .HasColumnOrder(3);
+
+                    b.Property<string>("Parroquia")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(8);
+
+                    b.Property<string>("Piso")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(12);
+
+                    b.Property<int>("PuntodeReferencia")
+                        .HasColumnType("INT")
+                        .HasColumnOrder(14);
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasColumnOrder(15);
+
+                    b.Property<string>("TelefonoAlternativo")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(16);
+
+                    b.Property<string>("Urbanizacion")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)")
+                        .HasColumnOrder(9);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DatosPrincipalesRG");
+                });
 
             modelBuilder.Entity("DesarrolloSocialModelo.DataModel.Gestores", b =>
                 {
