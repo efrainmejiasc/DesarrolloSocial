@@ -89,6 +89,9 @@ function RegistroCargaFamiliar() {
 }  
 
 function GuardarFacturaDetalle() {
+    var empresa = $('#empresa').val();
+    var nombreEmpresa = $("#empresa option:selected").text();
+
     var FacturaDetalleDTO = new Array();
     var nfilas = $("#tablaLineas").find("tr");
     var nFactura = $('#nFactura').val();
