@@ -133,7 +133,7 @@ function EmailValido(mail) {
 }
 
 function RedirLogin() {
-    window.location.href = 'urlLogin';
+    window.location.href = urlLogin;
 }
 
 

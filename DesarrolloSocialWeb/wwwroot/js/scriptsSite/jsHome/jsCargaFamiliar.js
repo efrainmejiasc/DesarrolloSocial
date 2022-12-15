@@ -60,7 +60,74 @@ function InicializarDataTable() {
     }); 
 }
     
-   
+function RegistroCargaFamiliar() {
+
+    var cantidad = $("#cantidad").val();
+    var estudian = $("#estudian").val();
+    var estudian = $("#estudian").val();
+
+
+
+
+    $.ajax({
+        type: "POST",
+        url: urlRegistroCargaFamiliar,
+        data: { CargaFamiliar: JSON.stringify(CargaFamiliar) },
+        datatype: "json",
+        success: function (data) {
+            console.log(data);
+            if (data.estado) {
+                toastr.success(data.mensaje);
+                setTimeout(RedirLogin, 2000);
+            }
+            else
+                toastr.warning(data.mensaje);
+        }
+    });
+
+    return false;
+}  
+
+function GuardarFacturaDetalle() {
+    var FacturaDetalleDTO = new Array();
+    var nfilas = $("#tablaLineas").find("tr");
+    var nFactura = $('#nFactura').val();
+    var pImpuesto = parseFloat($('#pImpuesto').val());
+    var pDescuento = parseFloat($('#pDescuento').val());
+
+    for (var i = 1; i < nfilas.length; i++) {
+        var celdas = $(nfilas[i]).find("td");
+        var x = {};
+        x.Linea = parseInt(i);
+        x.NumeroFactura = nFactura;
+        x.NombreArticulo = $(celdas[1]).text();
+        x.Descripcion = $(celdas[2]).text();
+        x.Cantidad = parseInt($(celdas[3]).text());
+        x.Unidad = $(celdas[4]).text();
+        x.PrecioUnitario = parseFloat($(celdas[5]).text());
+        x.Subtotal = parseFloat($(celdas[6]).text());
+        x.IdArticulo = 0;
+        x.PorcentajeImpuesto = pImpuesto;
+        x.Impuesto = 0;
+        x.PorcentajeDescuento = pDescuento;
+        x.Descuento = 0;
+        x.Total = parseFloat($(celdas[6]).text());
+        x.Fecha = FechaActual();
+        x.FechaModificacion = FechaActual();
+        x.IdUsuario = 0;
+        x.Activo = true;
+
+        FacturaDetalleDTO.push(x);
+    }
+
+
+
+    return false;
+}
+
+
+
+
 
         
         

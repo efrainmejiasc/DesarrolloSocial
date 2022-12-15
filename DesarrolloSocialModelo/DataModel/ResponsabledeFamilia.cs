@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace DesarrolloSocialModelo.DataModel
 {
     [Table("Responsabledefamilia")]
-    internal class ResponsabledeFamilia
+    public class ResponsabledeFamilia
     {
-
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column(Order = 1, TypeName = "INT")]
         public int Id { get; set; }
@@ -22,7 +22,7 @@ namespace DesarrolloSocialModelo.DataModel
         [Column(Order = 3, TypeName = "VARCHAR(100)")]
         public string Apellidos { get; set; }
 
-        [Key]
+     
         [Column(Order = 4, TypeName = "VARCHAR(50)")]
         public string Nacionalidad { get; set; }
 
