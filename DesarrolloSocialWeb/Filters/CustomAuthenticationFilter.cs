@@ -21,7 +21,7 @@ namespace DesarrolloSocialWeb.Filters
 
                 if (string.IsNullOrEmpty(this.httpContext.HttpContext.Session.GetString("GestorLogin")))
                 {
-                    if (filterContext.Controller is LoginController == false)
+                    if (filterContext.Controller is LoginController == false || filterContext.Controller is GFormController == false)
                     {
                         filterContext.HttpContext.Response.Redirect("/Login/Index");
                     }

@@ -123,10 +123,79 @@ function GuardarFacturaDetalle() {
         FacturaDetalleDTO.push(x);
     }
 
-
-
     return false;
 }
+
+function GuardarRegistroJefedeFamilia() {
+    var FechaRegistro = $('#fechaRegistro').val();
+    var Pais = $('#pais').val();
+    var Estado = $('#estado').val();
+    var Ciudad = $('#ciudad').val();
+    var Municipio = $('#municipio').val();
+    var CodigoPostal = $('#codigoPostal').val();
+    var ParroquiaDistrito = $('#parroquiaDist').val();
+    var Urbanizacion = $('#urbanizacion').val();
+    var Avenida = $('#avenida').val();
+    var EdificioCasa = $('#EdificioCasa').val();
+    var Piso = $('#piso').val();
+    var NumerodeApartamento = $('#apartamentoN').val();
+    var PuntodeReferencia = $('#puntodeReferencia').val();
+    var Telefono = $('#telefono').val();
+    var TelefonoAlternativo = $('#telefonoAlternativo').val();
+    var CorreoElectronico = $('#correo').val();
+    return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
