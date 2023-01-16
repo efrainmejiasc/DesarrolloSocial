@@ -84,7 +84,7 @@ namespace DesarrolloSocialWeb.Controllers
                 //HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://restcountries.com/v3.1/all");
                 HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://countriesnow.space/api/v0.1/countries");
                 var response = await client.SendAsync(request);
-                if (response.IsprimaryStatusCode)
+                if (response.IsSuccessStatusCode)
                 {
                     respuesta = await response.Content.ReadAsStringAsync();
                     paises = JsonConvert.DeserializeObject<PaisesModel>(respuesta);
@@ -112,7 +112,7 @@ namespace DesarrolloSocialWeb.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://countriesnow.space/api/v0.1/countries");
                 var response = await client.SendAsync(request);
-                if (response.IsprimaryStatusCode)
+                if (response.IsSuccessStatusCode)
                 {
                     respuesta = await response.Content.ReadAsStringAsync();
                     paises = JsonConvert.DeserializeObject<PaisesModel>(respuesta);
