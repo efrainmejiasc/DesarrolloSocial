@@ -26,9 +26,15 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 builder.Services.AddMvc();
+#if DEBUG
 builder.Services.AddDbContext<MyAppContext>(
-    op => op.UseSqlServer(@"Server=EMCSERVERASUS\SQLEXPRESS;DataBase=DesarrolloSocial;User Id=sa;Password=1234santiago;MultipleActiveResultSets=false;Connection Timeout=120;TrustServerCertificate=True;",
+    op => op.UseSqlServer(@"Data Source=SQL8003.site4now.net;Initial Catalog=db_a9308e_desarrollo;User Id=db_a9308e_desarrollo_admin;Password=Bruss12345",
     b => b.MigrationsAssembly("DesarrolloSocialModelo")));
+#else
+builder.Services.AddDbContext<MyAppContext>(
+    op => op.UseSqlServer(@"Data Source=SQL8003.site4now.net;Initial Catalog=db_a9308e_desarrollo;User Id=db_a9308e_desarrollo_admin;Password=Bruss12345",
+    b => b.MigrationsAssembly("DesarrolloSocialModelo")));
+#endif
 
 
 builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
