@@ -27,14 +27,14 @@ namespace DesarrolloSocialWeb.Controllers
         [HttpPost]
         public IActionResult CrearRegistroGestor(string gestorModelStr)
         {
-            var gestorModel = JsonConvert.DeserializeObject<Gestores>(gestorModelStr);
-
             var respuesta = new RespuestaModel();
             respuesta.Estado = false;
             respuesta.Mensaje = "Error al crear gestor";
 
             if (string.IsNullOrEmpty(gestorModelStr))
                 return Json(respuesta);
+
+            var gestorModel = JsonConvert.DeserializeObject<Gestores>(gestorModelStr);
 
             var passwordEncriptado = DesarrolloSocialNegocio.Helpers.Helper.EnCodeBase64(gestorModel.Email + gestorModel.Password);
             gestorModel.Password = passwordEncriptado;

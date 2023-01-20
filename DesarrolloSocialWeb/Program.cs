@@ -41,6 +41,9 @@ builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<MyAppContext, MyAppContext>();
 builder.Services.AddScoped<IGestoresService, GestoresService>();
 builder.Services.AddScoped<IGestoresRepository, GestoresRepository>();
+builder.Services.AddScoped<IDatosPrincipalesRGService, DatosPrincipalesRGService>();
+builder.Services.AddScoped<IDatosPrincipalesRGRepository, DatosPrincipalesRGRepository>();
+
 
 
 

@@ -10,6 +10,7 @@ using DesarrolloSocialWeb.Models;
 using DesarrolloSocialModelo.DataModel;
 using DesarrolloSocialWeb.Filters;
 using System.Web.Http.Filters;
+using DesarrolloSocialNegocio.Services;
 
 namespace DesarrolloSocialWeb.Controllers
 {
@@ -18,13 +19,16 @@ namespace DesarrolloSocialWeb.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IGestoresService _gestoresService;
+        private readonly IDatosPrincipalesRGService _datosPrincipalesRGService;
         private readonly IHttpContextAccessor _httpContext;
         private readonly Gestores usuarioGestor;
 
-        public HomeController(ILogger<HomeController> logger, IGestoresService gestoresService, IHttpContextAccessor httpContext)
+        public HomeController(ILogger<HomeController> logger, IGestoresService gestoresService, IHttpContextAccessor httpContext,
+                             IDatosPrincipalesRGService datosPrincipalesRGService)
         {
             this._logger = logger;
-            this._gestoresService = gestoresService;
+            this._datosPrincipalesRGService = datosPrincipalesRGService;
+
             this._httpContext = httpContext;
 
             if (!string.IsNullOrEmpty(_httpContext.HttpContext.Session.GetString("GestorLogin")))
@@ -139,6 +143,38 @@ namespace DesarrolloSocialWeb.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+
+        [HttpPost]
+        public IActionResult CrearDatosPrincipalesRG(string DatosPrincipalesRG)
+        {
+           
+            var respuesta = new RespuestaModel();
+            respuesta.Estado = false;
+            respuesta.Mensaje = "El campo no puede estar vacio";
+
+            if (string.IsNullOrEmpty(DatosPrincipalesRG))
+                return Json(respuesta);
+
+            var datosmodel = JsonConvert.DeserializeObject<DatosPrincipalesRG>(DatosPrincipalesRG);
+
+            try
+            {
+                var resultado = this._datosPrincipalesRGService.InsertDatosPrincipalesRG(datosmodel);
+                if (resultado)
+                {
+                    respuesta.Estado = true;
+                    respuesta.Mensaje = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                respuesta.Mensaje = ex.Message;
+                Console.WriteLine(ex.Message);
+            }
+
+            return Json(respuesta);
         }
     }
 }
