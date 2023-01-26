@@ -110,11 +110,11 @@ function CrearDatosPrincipalesRG() {
         Avenida: Avenida,
         EdifioCasa: EdificioCasa,
         Piso: Piso,
-        NumerodeApartamento: NumerodeApartamento,
+        NumerodeCasa: NumerodeApartamento,
         PuntodeReferencia: PuntodeReferencia,
         Telefono: Codigo + " " + Telefono,
         TelefonoAlternativo: Codigo2 + " " +  TelefonoAlternativo,
-        CorreoElectronico: CorreoElectronico,
+        Correo: CorreoElectronico,
     };
 
 $.ajax({

@@ -165,7 +165,7 @@ namespace DesarrolloSocialWeb.Controllers
                 if (resultado)
                 {
                     respuesta.Estado = true;
-                    respuesta.Mensaje = "";
+                    respuesta.Mensaje = "Transacción exitosa";
                 }
             }
             catch (Exception ex)

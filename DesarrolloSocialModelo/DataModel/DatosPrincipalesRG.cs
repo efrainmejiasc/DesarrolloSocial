@@ -54,8 +54,8 @@ namespace DesarrolloSocialModelo.DataModel
         [Column(Order = 13, TypeName = "VARCHAR(50)")]
         public string Numerodecasa { get; set; }
 
-        [Column(Order = 14, TypeName = "INT")]
-        public int PuntodeReferencia { get; set; }
+        [Column(Order = 14, TypeName = "VARCHAR(50)")]
+        public string PuntodeReferencia { get; set; }
 
         [Column(Order = 15, TypeName = "varchar(50)")]
         public string Telefono { get; set; }
