@@ -74,7 +74,7 @@ namespace DesarrolloSocialModelo.DataModel
         [Column(Order = 19, TypeName = "VARCHAR(50)")]
         public string MediodeTransporte { get; set; }
 
-        [Column(Order = 20,peName = "VARCHAR(50)")]
+        [Column(Order = 20,TypeName = "VARCHAR(50)")]
         public string TieneHijos { get; set; }
 
         [Column(Order = 21, TypeName = "INT")]
@@ -85,6 +85,9 @@ namespace DesarrolloSocialModelo.DataModel
 
         [Column(Order = 23, TypeName = "INT")]
         public int TieneTratamiento { get; set; }
+
+        [Column(Order = 22, TypeName = "VARCHAR(50)")]
+        public string TipodeDiscapacidad { get; set; }
 
         [Column(Order = 24, TypeName = "INT")]
         public int PadeceEnfermedad { get; set; }

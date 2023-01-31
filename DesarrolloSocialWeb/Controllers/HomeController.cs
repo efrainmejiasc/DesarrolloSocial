@@ -20,15 +20,19 @@ namespace DesarrolloSocialWeb.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IGestoresService _gestoresService;
         private readonly IDatosPrincipalesRGService _datosPrincipalesRGService;
+        private readonly IResponsabledeFamiliaService _responsabledeFamiliaService;
         private readonly IHttpContextAccessor _httpContext;
         private readonly Gestores usuarioGestor;
 
         public HomeController(ILogger<HomeController> logger, IGestoresService gestoresService, IHttpContextAccessor httpContext,
-                             IDatosPrincipalesRGService datosPrincipalesRGService)
+                             IDatosPrincipalesRGService datosPrincipalesRGService, IResponsabledeFamiliaService responsabledeFamiliaService)
+
+
         {
             this._logger = logger;
             this._datosPrincipalesRGService = datosPrincipalesRGService;
-
+            this._gestoresService = gestoresService;
+            this._responsabledeFamiliaService = responsabledeFamiliaService;
             this._httpContext = httpContext;
 
             if (!string.IsNullOrEmpty(_httpContext.HttpContext.Session.GetString("GestorLogin")))
@@ -162,6 +166,38 @@ namespace DesarrolloSocialWeb.Controllers
             try
             {
                 var resultado = this._datosPrincipalesRGService.InsertDatosPrincipalesRG(datosmodel);
+                if (resultado)
+                {
+                    respuesta.Estado = true;
+                    respuesta.Mensaje = "Transacción exitosa";
+                }
+            }
+            catch (Exception ex)
+            {
+                respuesta.Mensaje = ex.Message;
+                Console.WriteLine(ex.Message);
+            }
+
+            return Json(respuesta);
+        }
+
+
+        [HttpPost]
+        public IActionResult CrearResponsabledeFamilia(string ResponsabledeFamilia)
+        {
+
+            var respuesta = new RespuestaModel();
+            respuesta.Estado = false;
+            respuesta.Mensaje = "El campo no puede estar vacio";
+
+            if (string.IsNullOrEmpty(ResponsabledeFamilia))
+                return Json(respuesta);
+
+            var datosmodel = JsonConvert.DeserializeObject<ResponsabledeFamilia>(ResponsabledeFamilia);
+
+            try
+            {
+                var resultado = this._responsabledeFamiliaService.InsertResponsabledeFamilia(datosmodel);
                 if (resultado)
                 {
                     respuesta.Estado = true;

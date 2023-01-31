@@ -33,7 +33,7 @@ function MostrarDiscapacidad() {
 }
 
 
-function CrearDatosPrincipalesRG() {
+function CrearResponsabledeFamilia() {
     var Nombres = $('#nombre').val();
     var Apellidos = $('#apellido').val();
     var Nacionalidad = $('#nacionalidad option:selected').text();
@@ -60,3 +60,68 @@ function CrearDatosPrincipalesRG() {
     var TipoEnfermedad = $('#tipoenfermedad option:selected').text();
     var Tienetratamiento = $('#tienetratamiento option:selected').text();
     var TipodeTratamiento = $('#tipotratamiento option:selected').text();
+
+
+
+    if (Nombres === '' || Apellidos === '' || Nacionalidad === '' || Documento === '' || NumerodeDocumento === '' ||
+        FechaNacimiento === '' || lugardeNacimiento === '' || Edad === '' || Sexo === '' || EstadoCivil === ''
+        || NiveldeInstruccion === '' || Profesion === '' || Habilidades === '' || Trabaja === '' || CondicionLaboral === '' || TipodeNegocio === '' || MediodeTransporte === '' ||
+        TieneHijos === '' || NumerodeHijos === '' || TieneDiscapacidad === '' || TipodeDiscapacidad === '' || TieneTratamiento === '' || PadeceEnfermedad === '' || TipoEnfermedad === '' || Tienetratamiento === '' || TipodeTratamiento === '')
+
+
+    {
+
+        toastr.warning("Todos los campos son requeridos");
+        return false;
+    }
+
+    var ResponsabledeFamilia = {
+        Nombres: Nombres,
+        Apellidos: Apellidos,
+        Nacionalidad: Nacionalidad,
+        Documento: Documento,
+        NumerodeDocumento: NumerodeDocumento,
+        FechaNacimiento: FechaNacimiento,
+        lugardeNacimiento: lugardeNacimiento,
+        Edad: Edad,
+        Sexo: Sexo,
+        EstadoCivil: EstadoCivil,
+        NiveldeInstruccion: NiveldeInstruccion,
+        Profesion: Profesion,
+        Habilidades: Habilidades,
+        Trabaja: Trabaja,
+        CondicionLaboral: CondicionLaboral,
+        TipodeNegocio: TipodeNegocio,
+        MediodeTransporte: MediodeTransporte,
+        TieneHijos: TieneHijos,
+        NumerodeHijos: NumerodeHijos,
+        TieneDiscapacidad: TieneDiscapacidad,
+        TipodeDiscapacidad: TipodeDiscapacidad,
+        TieneTratamiento: TieneTratamiento,
+        PadeceEnfermedad: PadeceEnfermedad,
+        TipoEnfermedad: TipoEnfermedad,
+        Tienetratamiento: Tienetratamiento,
+        TipodeTratamiento: TipodeTratamiento,
+
+
+
+    };
+
+    $.ajax({
+        type: "POST",
+        url: urlCrearResponsabledeFamilia,
+        data: { ResponsabledeFamilia: JSON.stringify(ResponsabledeFamilia) },
+        datatype: "json",
+        success: function (data) {
+            console.log(data);
+            if (data.estado) {
+                toastr.success(data.mensaje);
+                //setTimeout(RedirLogin, 2000);
+            }
+            else
+                toastr.warning(data.mensaje);
+        }
+    });
+
+    return false;
+}

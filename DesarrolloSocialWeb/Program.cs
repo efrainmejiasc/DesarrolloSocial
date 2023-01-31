@@ -43,7 +43,8 @@ builder.Services.AddScoped<IGestoresService, GestoresService>();
 builder.Services.AddScoped<IGestoresRepository, GestoresRepository>();
 builder.Services.AddScoped<IDatosPrincipalesRGService, DatosPrincipalesRGService>();
 builder.Services.AddScoped<IDatosPrincipalesRGRepository, DatosPrincipalesRGRepository>();
-
+builder.Services.AddScoped<IResponsabledeFamiliaService, ResponsabledeFamiliaService>();
+builder.Services.AddScoped<IResponsabledeFamiliaRepository, ResponsabledeFamiliaRepository>();
 
 
 
