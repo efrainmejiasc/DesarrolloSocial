@@ -49,8 +49,8 @@ namespace DesarrolloSocialModelo.DataModel
         [Column(Order = 11, TypeName = "VARCHAR(100)")]
         public string EstadoCivil { get; set; }
 
-        [Column(Order = 12, TypeName = "INT")]
-        public int NiveldeInstruccion { get; set; }
+        [Column(Order = 12, TypeName = "VARCHAR(50)")]
+        public string NiveldeInstruccion { get; set; }
 
 
         [Column(Order = 13, TypeName = "VARCHAR(50)")]
@@ -59,38 +59,35 @@ namespace DesarrolloSocialModelo.DataModel
         [Column(Order = 14, TypeName = "VARCHAR(50)")]
         public string Habilidades { get; set; }
 
-        [Column(Order = 15, TypeName = "INT")]
-        public int Trabaja { get; set; }
+        [Column(Order = 15, TypeName = "VARCHAR(50)")]
+        public string Trabaja { get; set; }
 
-        [Column(Order = 16, TypeName = "INT")]
-        public int CondicionLaboral { get; set; }
+        [Column(Order = 16, TypeName = "VARCHAR(50)")]
+        public string CondicionLaboral { get; set; }
 
         [Column(Order = 17, TypeName = "VARCHAR(50)")]
-        public string NivelInstruccion { get; set; }
-
-        [Column(Order = 18, TypeName = "VARCHAR(50)")]
         public string TipodeNegocio { get; set; }
 
-        [Column(Order = 19, TypeName = "VARCHAR(50)")]
+        [Column(Order = 18, TypeName = "VARCHAR(50)")]
         public string MediodeTransporte { get; set; }
 
-        [Column(Order = 20,TypeName = "VARCHAR(50)")]
+        [Column(Order = 19,TypeName = "VARCHAR(50)")]
         public string TieneHijos { get; set; }
 
-        [Column(Order = 21, TypeName = "INT")]
+        [Column(Order = 20, TypeName = "INT")]
         public int NumerodeHijos { get; set; }
 
-        [Column(Order = 22, TypeName = "VARCHAR(50)")]
+        [Column(Order = 21, TypeName = "VARCHAR(50)")]
         public string TieneDiscapacidad { get; set; }
 
-        [Column(Order = 23, TypeName = "INT")]
-        public int TieneTratamiento { get; set; }
-
         [Column(Order = 22, TypeName = "VARCHAR(50)")]
+        public string Tratamiento { get; set; }
+
+        [Column(Order = 23, TypeName = "VARCHAR(50)")]
         public string TipodeDiscapacidad { get; set; }
 
-        [Column(Order = 24, TypeName = "INT")]
-        public int PadeceEnfermedad { get; set; }
+        [Column(Order = 24, TypeName = "VARCHAR(50)")]
+        public string PadeceEnfermedad { get; set; }
 
         [Column(Order = 25, TypeName = "VARCHAR(50)")]
         public string TipoEnfermedad { get; set; }

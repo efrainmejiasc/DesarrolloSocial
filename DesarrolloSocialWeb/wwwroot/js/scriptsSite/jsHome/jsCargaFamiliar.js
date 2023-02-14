@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     console.log("ready!");
-    setTimeout(InicializarDataTable,1000);
-    CargaFamiliar();
+    //setTimeout(InicializarDataTable,1000);
+    //CargaFamiliar();
 });
 
 
@@ -48,17 +48,17 @@ function TotalIngresoSum() {
     $("#tingreso").val(suma);
 }
 
-function InicializarDataTable() {
+//function InicializarDataTable() {
  
-    $('#cargaFamiliar').DataTable({
-        language: {
-            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-        },
-        "bInfo": false,
-        "lengthChange": false,
-        pagingType: "simple"
-    }); 
-}
+//    $('#cargaFamiliar').DataTable({
+//        language: {
+//            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+//        },
+//        "bInfo": false,
+//        "lengthChange": false,
+//        pagingType: "simple"
+//    }); 
+//}
     
 function RegistroCargaFamiliar() {
 
@@ -88,62 +88,175 @@ function RegistroCargaFamiliar() {
     return false;
 }  
 
-function GuardarFacturaDetalle() {
-    var empresa = $('#empresa').val();
-    var nombreEmpresa = $("#empresa option:selected").text();
+//function GuardarFacturaDetalle() {
+//    var empresa = $('#empresa').val();
+//    var nombreEmpresa = $("#empresa option:selected").text();
 
-    var FacturaDetalleDTO = new Array();
-    var nfilas = $("#tablaLineas").find("tr");
-    var nFactura = $('#nFactura').val();
-    var pImpuesto = parseFloat($('#pImpuesto').val());
-    var pDescuento = parseFloat($('#pDescuento').val());
+//    var FacturaDetalleDTO = new Array();
+//    var nfilas = $("#tablaLineas").find("tr");
+//    var nFactura = $('#nFactura').val();
+//    var pImpuesto = parseFloat($('#pImpuesto').val());
+//    var pDescuento = parseFloat($('#pDescuento').val());
 
-    for (var i = 1; i < nfilas.length; i++) {
-        var celdas = $(nfilas[i]).find("td");
-        var x = {};
-        x.Linea = parseInt(i);
-        x.NumeroFactura = nFactura;
-        x.NombreArticulo = $(celdas[1]).text();
-        x.Descripcion = $(celdas[2]).text();
-        x.Cantidad = parseInt($(celdas[3]).text());
-        x.Unidad = $(celdas[4]).text();
-        x.PrecioUnitario = parseFloat($(celdas[5]).text());
-        x.Subtotal = parseFloat($(celdas[6]).text());
-        x.IdArticulo = 0;
-        x.PorcentajeImpuesto = pImpuesto;
-        x.Impuesto = 0;
-        x.PorcentajeDescuento = pDescuento;
-        x.Descuento = 0;
-        x.Total = parseFloat($(celdas[6]).text());
-        x.Fecha = FechaActual();
-        x.FechaModificacion = FechaActual();
-        x.IdUsuario = 0;
-        x.Activo = true;
+//    for (var i = 1; i < nfilas.length; i++) {
+//        var celdas = $(nfilas[i]).find("td");
+//        var x = {};
+//        x.Linea = parseInt(i);
+//        x.NumeroFactura = nFactura;
+//        x.NombreArticulo = $(celdas[1]).text();
+//        x.Descripcion = $(celdas[2]).text();
+//        x.Cantidad = parseInt($(celdas[3]).text());
+//        x.Unidad = $(celdas[4]).text();
+//        x.PrecioUnitario = parseFloat($(celdas[5]).text());
+//        x.Subtotal = parseFloat($(celdas[6]).text());
+//        x.IdArticulo = 0;
+//        x.PorcentajeImpuesto = pImpuesto;
+//        x.Impuesto = 0;
+//        x.PorcentajeDescuento = pDescuento;
+//        x.Descuento = 0;
+//        x.Total = parseFloat($(celdas[6]).text());
+//        x.Fecha = FechaActual();
+//        x.FechaModificacion = FechaActual();
+//        x.IdUsuario = 0;
+//        x.Activo = true;
 
-        FacturaDetalleDTO.push(x);
+//        FacturaDetalleDTO.push(x);
+//    }
+
+//    return false;
+//}
+
+function CargaFamiliar() {
+    var CantidadDepersonasBajosuCargo = $('#cantidad').val();
+    var NiñosEstudian = $('#niñosEstudian').val();
+    var TienenDocumentoJefeDeFamilia = $('#documento1').val();
+    var CantidadJefeDeFamilia = $('#cantidad1').val();
+    var EstudiaJefeDeFamilia = $('#estudia1').val();
+    var TrabajaJefeDeFamilia = $('#trabaja1').val();
+    var IngresoJefeDeFamilia = $('#ingreso1').val();
+    var ActividadCulturalJefeDeFamilia = $('#deporte1').val();
+    var EmbarazosJefeDeFamilia = $('#embarazo1').val();
+    var EnfermedadDiscapacidadJefeDeFamilia = $('#enfermedad1').val();
+    var TratamientoJefeDeFamilia = $('#tratamiento1').val();
+    var TienenDocumentoNiños = $('#documentoNiños').val();
+    var CantidadNiños = $('#documento2').val();
+    var EstudiaNiños = $('#estudia2').val();
+    var TrabajaNiños = $('#trabaja2').val();
+    var IngresoNiños = $('#ingreso2').val();
+    var ActividadCulturalNiños = $('#deporte2').val();
+    var EmbarazosNiños = $('#embarazo2').val();
+    var EnfermedadDiscapacidadNiños = $('#enfermedad2').val();
+    var TratamientoNiños = $('#tratamiento2').val();
+    var TienenDocumentoAdolecente = $('#documento3').val();
+    var CantidadAdolecente = $('#documento3').val();
+    var EstudiaAdolecente = $('#estudia3').val();
+    var TrabajaAdolecente = $('#trabaja3').val();
+    var IngresoAdolecente = $('#ingreso3').val();
+    var ActividadCulturalAdolecente = $('#deporte3').val();
+    var EmbarazosAdolecente = $('#embarazo3').val();
+    var EnfermedadDiscapacidadAdolecente = $('#enfermedad3').val();
+    var TratamientoAdolecente = $('#tratamiento3').val();
+    var TienenDocumentoAdultos = $('#documento4').val();
+    var CantidadAdultos = $('#documento4').val();
+    var EstudiaAdultos = $('#estudia4').val();
+    var TrabajaAdultos = $('#trabaja4').val();
+    var IngresoAdultos = $('#ingreso4').val();
+    var ActividadCulturalAdultos = $('#deporte4').val();
+    var EmbarazosAdultos = $('#embarazo4').val();
+    var EnfermedadDiscapacidadAdultos = $('#enfermedad4').val();
+    var TratamientoAdultos = $('#tratamiento4').val();
+    var TienenDocumentoAdultosMayores = $('#documento5').val();
+    var CantidadAdultosMayores = $('#documento5').val();
+    var EstudiaAdultosMayores = $('#estudia5').val();
+    var TrabajaAdultosMayores = $('#trabaja5').val();
+    var IngresoAdultosMayores = $('#ingreso5').val();
+    var ActividadCulturalAdultosMayores = $('#deporte5').val();
+    var EmbarazosAdultosMayores = $('#embarazo5').val();
+    var EnfermedadDiscapacidadAdultosMayores = $('#enfermedad5').val();
+    var TratamientoAdultosMayores = $('#tratamiento5').val();
+  
+
+    if (CantidadDepersonasBajosuCargo === '' || NiñosEstudian === '' || TienenDocumentoJefeDeFamilia === '' || CantidadJefeDeFamilia === '' || EstudiaJefeDeFamilia === '' || TrabajaJefeDeFamilia === '' || IngresoJefeDeFamilia === '' || ActividadCulturalJefeDeFamilia === '' || EnfermedadDiscapacidadJefeDeFamilia === '' || TratamientoJefeDeFamilia === ''
+        || TienenDocumentoNiños === ''|| CantidadNiños === '' || EstudiaNiños === '' || TrabajaNiños === '' || IngresoNiños === '' || ActividadCulturalNiños === '' || EnfermedadDiscapacidadNiños === '' || TratamientoNiños === ''
+        || TienenDocumentoAdolecente === '' || CantidadAdolecente === '' || EstudiaAdolecente === '' || TrabajaAdolecente === '' || IngresoAdolecente === '' || ActividadCulturalAdolecente === '' || EnfermedadDiscapacidadAdolecente === '' || TratamientoAdolecente === ''
+        || TienenDocumentoAdultos === '' || CantidadAdultos === '' || EstudiaAdultos === '' || TrabajaAdultos === '' || IngresoAdultos === '' || ActividadCulturalAdultos === '' || EnfermedadDiscapacidadAdultos === '' || TratamientoAdultos === ''
+        || TienenDocumentoAdultosMayores === '' || CantidadAdultosMayores === '' || EstudiaAdultosMayores === '' || TrabajaAdultosMayores === '' || IngresoAdultosMayores === '' || ActividadCulturalAdultosMayores === '' || EnfermedadDiscapacidadAdultosMayores === '' || TratamientoAdultosMayores === ''
+    ) {  
+     
+
+    var CargaFamiliar = {
+        CantidadDepersonasBajosuCargo: CantidadDepersonasBajosuCargo,
+        NiñosEstudian: NiñosEstudian,
+        TienenDocumentoJefeDeFamilia: TienenDocumentoJefeDeFamilia,
+        CantidadJefeDeFamilia:CantidadJefeDeFamilia,
+        EstudiaJefeDeFamilia: EstudiaJefeDeFamilia,
+        TrabajaJefeDeFamilia: TrabajaJefeDeFamilia,
+        IngresoJefeDeFamilia: IngresoJefeDeFamilia,
+        ActividadCulturalJefeDeFamilia: ActividadCulturalJefeDeFamilia,
+        EmbarazosJefeDeFamilia: EmbarazosJefeDeFamilia,
+        EnfermedadDiscapacidadJefeDeFamilia: EnfermedadDiscapacidadJefeDeFamilia,
+        TratamientoJefeDeFamilia: TratamientoJefeDeFamilia,
+        TienenDocumentoNiños: TienenDocumentoNiños,
+        CantidadNiños: CantidadNiños,
+        EstudiaNiños: EstudiaNiños,
+        TrabajaNiños: TrabajaNiños,
+        IngresoNiños: IngresoNiños,
+        ActividadCulturalNiños: ActividadCulturalNiños,
+        EmbarazosNiños: EmbarazosNiños,
+        EnfermedadDiscapacidadNiños: EnfermedadDiscapacidadNiños,
+        TratamientoNiños: TratamientoNiños,
+        TienenDocumentoAdolecente: TienenDocumentoAdolecente,
+        CantidadAdolecente: CantidadAdolecente,
+        EstudiaAdolecente: EstudiaAdolecente,
+        TrabajaAdolecente: TrabajaAdolecente,
+        IngresoAdolecente: IngresoAdolecente,
+        ActividadCulturalAdolecente: ActividadCulturalAdolecente,
+        EmbarazosAdolecente: EmbarazosAdolecente,
+        EnfermedadDiscapacidadAdolecente: EnfermedadDiscapacidadAdolecente,
+        TratamientoAdolecente: TratamientoAdolecente,
+        TienenDocumentoAdultos: TienenDocumentoAdultos,
+        CantidadAdultos: CantidadAdultos,
+        EstudiaAdultos: EstudiaAdultos,
+        TrabajaAdultos: TrabajaAdultos,
+        IngresoAdultos: IngresoAdultos,
+        ActividadCulturalAdultos: ActividadCulturalAdultos,
+        EmbarazosAdultos: EmbarazosAdultos,
+        EnfermedadDiscapacidadAdultos: EnfermedadDiscapacidadAdultos,
+        TratamientoAdultos: TratamientoAdultos,
+        TienenDocumentoAdultosMayores: TienenDocumentoAdultosMayores,
+        CantidadAdultosMayores: CantidadAdultosMayores,
+        EstudiaAdultosMayores: EstudiaAdultosMayores,
+        TrabajaAdultosMayores: TrabajaAdultosMayores,
+        IngresoAdultosMayores: IngresoAdultosMayores,
+        ActividadCulturalAdultosMayores: ActividadCulturalAdultosMayores,
+        EmbarazosAdultosMayores: EmbarazosAdultosMayores,
+        EnfermedadDiscapacidadAdultosMayores: EnfermedadDiscapacidadAdultosMayores,
+        TratamientoAdultosMayores: TratamientoAdultosMayores,
+        IDCargaFamiliar
     }
+ 
+
+   
+
+    $.ajax({
+        type: "POST",
+        url: urlCrearCargaFamiliar,
+        data: { CargaFamiliar: JSON.stringify(CargaFamiliar) },
+        datatype: "json",
+        success: function (data) {
+            console.log(data);
+            if (data.estado) {
+                toastr.success(data.mensaje);
+                //setTimeout(RedirLogin, 2000);
+            }
+            else
+                toastr.warning(data.mensaje);
+        }
+    });
 
     return false;
-}
 
-function GuardarRegistroJefedeFamilia() {
-    var FechaRegistro = $('#fechaRegistro').val();
-    var Pais = $('#pais').val();
-    var Estado = $('#estado').val();
-    var Ciudad = $('#ciudad').val();
-    var Municipio = $('#municipio').val();
-    var CodigoPostal = $('#codigoPostal').val();
-    var ParroquiaDistrito = $('#parroquiaDist').val();
-    var Urbanizacion = $('#urbanizacion').val();
-    var Avenida = $('#avenida').val();
-    var EdificioCasa = $('#EdificioCasa').val();
-    var Piso = $('#piso').val();
-    var NumerodeApartamento = $('#apartamentoN').val();
-    var PuntodeReferencia = $('#puntodeReferencia').val();
-    var Telefono = $('#telefono').val();
-    var TelefonoAlternativo = $('#telefonoAlternativo').val();
-    var CorreoElectronico = $('#correo').val();
-    return false;
+
 }
 
 

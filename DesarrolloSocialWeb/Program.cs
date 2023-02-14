@@ -1,3 +1,4 @@
+
 using DesarrolloSocialModelo.DataModel;
 using DesarrolloSocialModelo.Interfaces;
 using DesarrolloSocialModelo.Repositories;
@@ -5,6 +6,7 @@ using DesarrolloSocialNegocio.Interfaces;
 using DesarrolloSocialNegocio.Services;
 using DesarrolloSocialWeb.Filters;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,13 +29,11 @@ builder.Services.AddSession(options =>
 });
 builder.Services.AddMvc();
 #if DEBUG
-builder.Services.AddDbContext<MyAppContext>(
-    op => op.UseSqlServer(@"Data Source=SQL8003.site4now.net;Initial Catalog=db_a9308e_desarrollo;User Id=db_a9308e_desarrollo_admin;Password=Bruss12345",
-    b => b.MigrationsAssembly("DesarrolloSocialModelo")));
+builder.Services.AddDbContext<MyAppContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionLocal"),
+                                                      b => b.MigrationsAssembly("DesarrolloSocialModelo")));
 #else
-builder.Services.AddDbContext<MyAppContext>(
-    op => op.UseSqlServer(@"Data Source=SQL8003.site4now.net;Initial Catalog=db_a9308e_desarrollo;User Id=db_a9308e_desarrollo_admin;Password=Bruss12345",
-    b => b.MigrationsAssembly("DesarrolloSocialModelo")));
+builder.Services.AddDbContext<MyAppContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+                                                      b => b.MigrationsAssembly("DesarrolloSocialModelo")));
 #endif
 
 
@@ -45,7 +45,8 @@ builder.Services.AddScoped<IDatosPrincipalesRGService, DatosPrincipalesRGService
 builder.Services.AddScoped<IDatosPrincipalesRGRepository, DatosPrincipalesRGRepository>();
 builder.Services.AddScoped<IResponsabledeFamiliaService, ResponsabledeFamiliaService>();
 builder.Services.AddScoped<IResponsabledeFamiliaRepository, ResponsabledeFamiliaRepository>();
-
+builder.Services.AddScoped<ICargaFamiliarService, CargaFamiliarService>();
+builder.Services.AddScoped<ICargaFamiliarRepository, CargaFamiliarRepository>();
 
 
 var app = builder.Build();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesarrolloSocialModelo.DataModel
 {
-    internal class CorredorHumanitario
+    public class CorredorHumanitario
     {
     }
 }

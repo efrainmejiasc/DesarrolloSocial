@@ -7,14 +7,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 }
+<script>
 
+    var urlCrearCargaFamiliar = '@Url.Action("CrearCargaFamiliar","Home")';
+
+
+</script>
 
 <div class="card" style="margin-top:5%;">
     <div class="card-body">
         <div class="form-horizontal" style="color:black">
 
-
-
+         
+            <input type="hidden" id="idCargaFamiliar" />
 
           <div class="col-md-3 text-md-right">
                 <label class="control-label">¿Cuantas Personas Permanecen Bajo su Cargo y Habitan con Ud?</label>
@@ -27,7 +32,7 @@
                 <label class="control-label">¿Los Niños y Adolescentes en Edad Escolar Estudian?</label>
           </div>
              <div class="col-md-8">
-              <select id="estudian">
+              <select id="niñosEstudian">
                   <option value="0" selected  disabled>Seleccionar</option>
                   <option value="1">Si</option>
                   <option value="2">No</option>
@@ -41,7 +46,8 @@
 
           <div class="container text-md-center">
 
-              <div class="col-md-12">
+                <div class="col-md-12" text-md-right">
+                    
                            <h1>Familia</h1>
              </div> 
                  
@@ -66,7 +72,7 @@
                   <tbody>
                       <tr>
                           <td style="color:black;font-weight:bold;font-size:16px;">Jefe&nbsp;de&nbsp;Familia</td>
-                          <td><input type="number" disabled id="cantidad1" step="1" min="1" max="100" onblur="CantidadPersonas();"/></td>
+                            <td><input type="number" disabled id="cantidad1" step="1" min="1" max="100" onblur="CantidadPersonas();" /> </td>
                           <td><select id="documento1"disabled><option value="0" selected disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="estudia1"disabled><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
                           <td><select id="trabaja1"disabled><option value="0" selected  disabled>Seleccionar</option><option value="1">Si</option><option value="2">No</option></select></td>
@@ -155,11 +161,12 @@
                
                
                 <div class="col-md-6 text-md-left" style="">
-                    <input type="reset" value="Atras" class="btn btn-danger form-control" onclick="" style="width:300px;" />
+                    <input type="reset" value="Atras" class="btn btn-danger form-control" onclick="ResponsabledeFamilia();" style="width:300px;" />
                 </div>
 
                  <div class="col-md-6 tex-md-right">
-                    <input type="button" value="Siguiente" class="btn btn-primary form-control" onclick=""style="width:300px;" />
+                    <input type="button" value="Siguiente" class="btn btn-primary form-control" onclick="CargaFamiliar();"style="width:300px;" />
+            
                 </div>
 
             </div>

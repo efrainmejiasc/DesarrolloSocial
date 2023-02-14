@@ -9,7 +9,7 @@
 <script>
    
     var urlCrearResponsabledeFamilia = '@Url.Action("CrearResponsabledeFamilia","Home")';
-
+    var urlCargaFamiliar = '@Url.Action("CargaFamiliar","Home")';
 
 </script>
 
@@ -269,7 +269,7 @@
                 <label class="control-label">¿Tiene Tratamiento o Terapia?</label>
           </div>
             <div class="col-md-8">
-            <select id="tratamiento-"name="tratamiento" class="form-control form-control-sm">
+            <select id="tratamiento"name="tratamiento" class="form-control form-control-sm">
                          <option value="0" disabled  selected >Seleccione Tratamiento...</option>
                          <option value="1">Si</option>
                          <option value="2">No</option>  
@@ -311,8 +311,14 @@
                           
              </select>
               </div>
-           
-           
+
+
+            <div class="col-md-12 text-md-right">
+
+                <label class="control-label">Tipo De Tratamiento</label>
+            </div>
+
+
             <div class="col-md-8">
 
             <input type="text" id="tipotratamiento" name="tipotratamiento" class="form form-control" placeholder="Especifique" />
@@ -326,7 +332,7 @@
                     <input type="reset" value="Atras" class="btn btn-danger form-control" onclick="" style="width:300px;" />
                 </div>
                  <div class="col-md-6 tex-md-right">
-                    <input type="button" value="Siguiente" class="btn btn-primary form-control" onclick=""style="width:300px;" />
+                    <input type="button" value="Siguiente" class="btn btn-primary form-control" onclick="CrearResponsabledeFamilia();" style="width:300px;" />
                 </div>
             </div>
 

@@ -55,18 +55,18 @@ function CrearResponsabledeFamilia() {
     var NumerodeHijos = $('#cantidad').val();
     var TieneDiscapacidad = $('#discapacidad option:selected').text();
     var TipodeDiscapacidad = $('#tipodiscapacidad option:selected').text();
-    var TieneTratamiento = $('#tratamiento option:selected').text();
+    var Tratamiento = $('#tratamiento option:selected').text();
     var PadeceEnfermedad = $('#padecedeenfermedad option:selected').text();
-    var TipoEnfermedad = $('#tipoenfermedad option:selected').text();
+    var TipoEnfermedad = $('#tipoenfermedad').val();
     var Tienetratamiento = $('#tienetratamiento option:selected').text();
-    var TipodeTratamiento = $('#tipotratamiento option:selected').text();
+    var TipodeTratamiento = $('#tipotratamiento').val();
 
 
 
     if (Nombres === '' || Apellidos === '' || Nacionalidad === '' || Documento === '' || NumerodeDocumento === '' ||
         FechaNacimiento === '' || lugardeNacimiento === '' || Edad === '' || Sexo === '' || EstadoCivil === ''
         || NiveldeInstruccion === '' || Profesion === '' || Habilidades === '' || Trabaja === '' || CondicionLaboral === '' || TipodeNegocio === '' || MediodeTransporte === '' ||
-        TieneHijos === '' || NumerodeHijos === '' || TieneDiscapacidad === '' || TipodeDiscapacidad === '' || TieneTratamiento === '' || PadeceEnfermedad === '' || TipoEnfermedad === '' || Tienetratamiento === '' || TipodeTratamiento === '')
+        TieneHijos === '' || NumerodeHijos === '' || TieneDiscapacidad === '' || TipodeDiscapacidad === '' || Tratamiento === '' || PadeceEnfermedad === '' || TipoEnfermedad === '' || Tienetratamiento === '' || TipodeTratamiento === '')
 
 
     {
@@ -97,7 +97,7 @@ function CrearResponsabledeFamilia() {
         NumerodeHijos: NumerodeHijos,
         TieneDiscapacidad: TieneDiscapacidad,
         TipodeDiscapacidad: TipodeDiscapacidad,
-        TieneTratamiento: TieneTratamiento,
+        Tratamiento: Tratamiento,
         PadeceEnfermedad: PadeceEnfermedad,
         TipoEnfermedad: TipoEnfermedad,
         Tienetratamiento: Tienetratamiento,
@@ -116,7 +116,7 @@ function CrearResponsabledeFamilia() {
             console.log(data);
             if (data.estado) {
                 toastr.success(data.mensaje);
-                //setTimeout(RedirLogin, 2000);
+                setTimeout(NavegarCargaFamiliar, 2000);
             }
             else
                 toastr.warning(data.mensaje);
@@ -124,4 +124,8 @@ function CrearResponsabledeFamilia() {
     });
 
     return false;
+}
+
+function NavegarCargaFamiliar() {
+    window.location.href = urlCargaFamiliar;
 }

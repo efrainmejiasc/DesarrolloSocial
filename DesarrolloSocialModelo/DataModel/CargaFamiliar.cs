@@ -23,8 +23,9 @@ namespace DesarrolloSocialModelo.DataModel
         [Column(Order = 3, TypeName = "VARCHAR(100)")]
         public string NiñosEstudian { get; set; }
 
-       
-
+        [Column(Order = 4, TypeName = "INT")]
+      
+        public int IdCargaFJefeDeFamilia{ get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using DesarrolloSocialModelo.DataModel;
+﻿
+using DesarrolloSocialModelo.DataModel;
 using DesarrolloSocialModelo.Interfaces;
 using System;
 using System.Collections.Generic;

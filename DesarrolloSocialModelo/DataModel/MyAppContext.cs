@@ -14,27 +14,20 @@ namespace DesarrolloSocialModelo.DataModel
             : base(options)
          {
          }
-
-        public virtual DbSet<RespuestasDeFormulario> RespuestasDeFormulario { get; set; }
         public virtual DbSet<Gestores> Gestores { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<DatosPrincipalesRG> DatosPrincipalesRG { get; set; }
         public virtual DbSet<ResponsabledeFamilia> ResponsabledeFamilia { get; set; }
         public virtual DbSet<CargaFamiliar> CargaFamiliar { get; set; }
-
-
-        public virtual DbSet<CargaFJefeDefamilia> CargaFJefedeFamilia { get; set; }
+        public virtual DbSet<RespuestasDeFormulario> RespuestasDeFormulario { get; set; }
+        public virtual DbSet<CargaFJefeDefamilia> CargaFJefeDefamilia { get; set; }
         public virtual DbSet<CargaFAdultos> CargaFAdultos { get; set; }
+        public virtual DbSet<CargaFAdultosMayores> CargaFAdultosMayores { get; set; }
+        public virtual DbSet<CargaFNiños> CargaFNiños { get; set; }
+        public virtual DbSet<CargaFAdolescentes> CargaFAdolescentes { get; set; }
 
-       public virtual DbSet<CargaFAdultosMayores> CargaFAdultosMayores{ get; set; }
-
-       public virtual DbSet<CargaFNiños> CargaFNiños { get; set; }
-
-       public virtual DbSet<CargaFAdolescentes> CargaFAdolescentes { get; set; }
-
-      public virtual DbSet<SoloParaUsoDelGestor> SoloParaUsoDelGestor { get; set; }
-
-      public virtual DbSet<Vivienda> Vivienda { get; set; }
+        public virtual DbSet<SoloParaUsoDelGestor> SoloParaUsoDelGestor { get; set; }
+        public virtual DbSet<Vivienda> Vivienda { get; set; }
     }
 
 }

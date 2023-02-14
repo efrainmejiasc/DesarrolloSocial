@@ -19,46 +19,36 @@ namespace DesarrolloSocialModelo.DataModel
         public int Id { get; set; }
 
         [Column(Order = 2, TypeName = "INT")]
-        public int CantidadPersonasACargo { get; set; }
+        public int CantidadNiños { get; set; }
 
         [Column(Order = 3, TypeName = "VARCHAR(100)")]
-        public string TienenDocumento { get; set; }
+        public string TienenDocumentoNiños { get; set; }
 
        
         [Column(Order = 4, TypeName = "VARCHAR(50)")]
-        public string Estudia { get; set; }
+        public string EstudiaNiños { get; set; }
 
         [Column(Order = 5, TypeName = "VARCHAR(50)")]
-        public string Trabaja { get; set; }
+        public string TrabajaNiños { get; set; }
 
         [Column(Order = 6, TypeName = "FLOAT")]
-        public decimal Ingreso { get; set; }
+        public decimal IngresoNiños { get; set; }
 
         [Column(Order = 7, TypeName = "DATETIME")]
-        public DateTime ActividadCultural { get; set; }
+        public DateTime ActividadCulturalNiños { get; set; }
 
         [Column(Order = 8, TypeName = "VARCHAR(50)")]
-        public string Embarazos { get; set; }
+        public string EmbarazosNiños { get; set; }
 
         [Column(Order = 9, TypeName = "VARCHAR(50)")]
-        public string EnfermedadDiscapacidad { get; set; }
+        public string EnfermedadDiscapacidadNiños { get; set; }
 
         [Column(Order = 10, TypeName = "VARCHAR(100)")]
-        public string Tratamiento { get; set; }
+        public string TratamientoNiños { get; set; }
 
 
         [Column(Order = 11, TypeName = "INT")]
         public int IDCargaFamiliar { get; set; }
-
-
-
-
-
-
-
-
-
-
 
     }
 }

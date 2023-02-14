@@ -17,7 +17,7 @@ namespace DesarrolloSocialModelo.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.0-preview.5.22302.2")
+                .HasAnnotation("ProductVersion", "6.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -31,25 +31,25 @@ namespace DesarrolloSocialModelo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime>("ActividadCultural")
+                    b.Property<DateTime>("ActividadCulturalAdolecente")
                         .HasColumnType("DATETIME")
                         .HasColumnOrder(7);
 
-                    b.Property<int>("CantidadPersonasaCargo")
+                    b.Property<int>("CantidadAdolecente")
                         .HasColumnType("INT")
                         .HasColumnOrder(2);
 
-                    b.Property<string>("Embarazos")
+                    b.Property<string>("EmbarazosAdolecente")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(8);
 
-                    b.Property<string>("EnfermedadDiscapacidad")
+                    b.Property<string>("EnfermedadDiscapacidadAdolecente")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(9);
 
-                    b.Property<string>("Estudia")
+                    b.Property<string>("EstudiaAdolecente")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(4);
@@ -58,21 +58,21 @@ namespace DesarrolloSocialModelo.Migrations
                         .HasColumnType("INT")
                         .HasColumnOrder(11);
 
-                    b.Property<double>("Ingreso")
+                    b.Property<double>("IngresoAdolecente")
                         .HasColumnType("FLOAT")
                         .HasColumnOrder(6);
 
-                    b.Property<string>("TienenDocumento")
+                    b.Property<string>("TienenDocumentoAdolecente")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnOrder(3);
 
-                    b.Property<string>("Trabaja")
+                    b.Property<string>("TrabajaAdolecente")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(5);
 
-                    b.Property<string>("Tratamiento")
+                    b.Property<string>("TratamientoAdolecente")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnOrder(10);
@@ -91,25 +91,25 @@ namespace DesarrolloSocialModelo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime>("ActividadCultural")
+                    b.Property<DateTime>("ActividadCulturalAdultos")
                         .HasColumnType("DATETIME")
                         .HasColumnOrder(7);
 
-                    b.Property<int>("Cantidad")
+                    b.Property<int>("CantidadAdultos")
                         .HasColumnType("INT")
                         .HasColumnOrder(2);
 
-                    b.Property<string>("Embarazos")
+                    b.Property<string>("EmbarazosAdultos")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(8);
 
-                    b.Property<string>("EnfermedadDiscapacidad")
+                    b.Property<string>("EnfermedadDiscapacidadAdultos")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(9);
 
-                    b.Property<string>("Estudia")
+                    b.Property<string>("EstudiaAdultos")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(4);
@@ -118,22 +118,22 @@ namespace DesarrolloSocialModelo.Migrations
                         .HasColumnType("INT")
                         .HasColumnOrder(11);
 
-                    b.Property<string>("Ingreso")
+                    b.Property<string>("IngresoAdultos")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(6);
 
-                    b.Property<string>("TienenDocumento")
+                    b.Property<string>("TienenDocumentoAdultos")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnOrder(3);
 
-                    b.Property<string>("Trabaja")
+                    b.Property<string>("TrabajaAdultos")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(5);
 
-                    b.Property<string>("Tratamiento")
+                    b.Property<string>("TratamientoAdultos")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnOrder(10);
@@ -152,25 +152,25 @@ namespace DesarrolloSocialModelo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime>("ActividadCultural")
+                    b.Property<DateTime>("ActividadCulturalAdultosMayores")
                         .HasColumnType("DATETIME")
                         .HasColumnOrder(7);
 
-                    b.Property<int>("CantidadPersonasAcargo")
+                    b.Property<int>("CantidadAdultosMayores")
                         .HasColumnType("INT")
                         .HasColumnOrder(2);
 
-                    b.Property<string>("Embarazos")
+                    b.Property<string>("EmbarazosAdultosMayores")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(8);
 
-                    b.Property<string>("EnfermedadDiscapacidad")
+                    b.Property<string>("EnfermedadDiscapacidadAdultosMayores")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(9);
 
-                    b.Property<string>("Estudia")
+                    b.Property<string>("EstudiaAdultosMayores")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(4);
@@ -179,21 +179,21 @@ namespace DesarrolloSocialModelo.Migrations
                         .HasColumnType("INT")
                         .HasColumnOrder(11);
 
-                    b.Property<double>("Ingreso")
+                    b.Property<double>("IngresoAdultosMayores")
                         .HasColumnType("FLOAT")
                         .HasColumnOrder(6);
 
-                    b.Property<string>("TienenDocumento")
+                    b.Property<string>("TienenDocumentoAdultosMayores")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnOrder(3);
 
-                    b.Property<string>("Trabaja")
+                    b.Property<string>("TrabajaAdultosMayores")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(5);
 
-                    b.Property<string>("Tratamiento")
+                    b.Property<string>("TratamientoAdultosMayores")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnOrder(10);
@@ -201,126 +201,6 @@ namespace DesarrolloSocialModelo.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CargaFAdultosMayores");
-                });
-
-            modelBuilder.Entity("DesarrolloSocialModelo.DataModel.CargaFJefeDefamilia", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INT")
-                        .HasColumnOrder(1);
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("ActividadCultural")
-                        .HasColumnType("DATETIME")
-                        .HasColumnOrder(7);
-
-                    b.Property<int>("CantidadPersonasAcargo")
-                        .HasColumnType("INT")
-                        .HasColumnOrder(2);
-
-                    b.Property<string>("Embarazos")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(8);
-
-                    b.Property<string>("EnfermedadDiscapacidad")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(9);
-
-                    b.Property<string>("Estudia")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(4);
-
-                    b.Property<int>("IDCargaFamiliar")
-                        .HasColumnType("INT")
-                        .HasColumnOrder(11);
-
-                    b.Property<double>("Ingreso")
-                        .HasColumnType("FLOAT")
-                        .HasColumnOrder(6);
-
-                    b.Property<string>("TienenDocumento")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(100)")
-                        .HasColumnOrder(3);
-
-                    b.Property<string>("Trabaja")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(5);
-
-                    b.Property<string>("Tratamiento")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(100)")
-                        .HasColumnOrder(10);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CargaFJefeDefamilia");
-                });
-
-            modelBuilder.Entity("DesarrolloSocialModelo.DataModel.CargaFNiños", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INT")
-                        .HasColumnOrder(1);
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("ActividadCultural")
-                        .HasColumnType("DATETIME")
-                        .HasColumnOrder(7);
-
-                    b.Property<int>("CantidadPersonasACargo")
-                        .HasColumnType("INT")
-                        .HasColumnOrder(2);
-
-                    b.Property<string>("Embarazos")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(8);
-
-                    b.Property<string>("EnfermedadDiscapacidad")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(9);
-
-                    b.Property<string>("Estudia")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(4);
-
-                    b.Property<int>("IDCargaFamiliar")
-                        .HasColumnType("INT")
-                        .HasColumnOrder(11);
-
-                    b.Property<double>("Ingreso")
-                        .HasColumnType("FLOAT")
-                        .HasColumnOrder(6);
-
-                    b.Property<string>("TienenDocumento")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(100)")
-                        .HasColumnOrder(3);
-
-                    b.Property<string>("Trabaja")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(5);
-
-                    b.Property<string>("Tratamiento")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(100)")
-                        .HasColumnOrder(10);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CargaFNiños");
                 });
 
             modelBuilder.Entity("DesarrolloSocialModelo.DataModel.CargaFamiliar", b =>
@@ -337,6 +217,10 @@ namespace DesarrolloSocialModelo.Migrations
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnOrder(2);
 
+                    b.Property<int>("IdCargaFJefeDeFamilia")
+                        .HasColumnType("INT")
+                        .HasColumnOrder(4);
+
                     b.Property<string>("NiñosEstudian")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)")
@@ -345,6 +229,126 @@ namespace DesarrolloSocialModelo.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CargaFamiliar");
+                });
+
+            modelBuilder.Entity("DesarrolloSocialModelo.DataModel.CargaFJefeDefamilia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INT")
+                        .HasColumnOrder(1);
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("ActividadCulturalJefeDeFamilia")
+                        .HasColumnType("DATETIME")
+                        .HasColumnOrder(7);
+
+                    b.Property<int>("CantidadJefeDeFamilia")
+                        .HasColumnType("INT")
+                        .HasColumnOrder(3);
+
+                    b.Property<string>("EmbarazosJefeDeFamilia")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(8);
+
+                    b.Property<string>("EnfermedadDiscapacidadJefeDeFamilia")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(9);
+
+                    b.Property<string>("EstudiaJefeDeFamilia")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(4);
+
+                    b.Property<int>("IDCargaFamiliar")
+                        .HasColumnType("INT")
+                        .HasColumnOrder(11);
+
+                    b.Property<double>("IngresoJefeDeFamilia")
+                        .HasColumnType("FLOAT")
+                        .HasColumnOrder(6);
+
+                    b.Property<string>("TienenDocumentoJefeDeFamilia")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(2);
+
+                    b.Property<string>("TrabajaJefeDeFamilia")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(5);
+
+                    b.Property<string>("TratamientoJefeDeFamilia")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(250)")
+                        .HasColumnOrder(10);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CargaFJefeDefamilia");
+                });
+
+            modelBuilder.Entity("DesarrolloSocialModelo.DataModel.CargaFNiños", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INT")
+                        .HasColumnOrder(1);
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("ActividadCulturalNiños")
+                        .HasColumnType("DATETIME")
+                        .HasColumnOrder(7);
+
+                    b.Property<int>("CantidadNiños")
+                        .HasColumnType("INT")
+                        .HasColumnOrder(2);
+
+                    b.Property<string>("EmbarazosNiños")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(8);
+
+                    b.Property<string>("EnfermedadDiscapacidadNiños")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(9);
+
+                    b.Property<string>("EstudiaNiños")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(4);
+
+                    b.Property<int>("IDCargaFamiliar")
+                        .HasColumnType("INT")
+                        .HasColumnOrder(11);
+
+                    b.Property<double>("IngresoNiños")
+                        .HasColumnType("FLOAT")
+                        .HasColumnOrder(6);
+
+                    b.Property<string>("TienenDocumentoNiños")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)")
+                        .HasColumnOrder(3);
+
+                    b.Property<string>("TrabajaNiños")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(5);
+
+                    b.Property<string>("TratamientoNiños")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)")
+                        .HasColumnOrder(10);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CargaFNiños");
                 });
 
             modelBuilder.Entity("DesarrolloSocialModelo.DataModel.DatosPrincipalesRG", b =>
@@ -548,9 +552,10 @@ namespace DesarrolloSocialModelo.Migrations
                         .HasColumnType("VARCHAR(100)")
                         .HasColumnOrder(3);
 
-                    b.Property<int>("CondicionLaboral")
-                        .HasColumnType("INT")
-                        .HasColumnOrder(15);
+                    b.Property<string>("CondicionLaboral")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(16);
 
                     b.Property<string>("Documento")
                         .IsRequired()
@@ -560,21 +565,21 @@ namespace DesarrolloSocialModelo.Migrations
                     b.Property<string>("Edad")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(8);
+                        .HasColumnOrder(9);
 
                     b.Property<string>("EstadoCivil")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)")
-                        .HasColumnOrder(10);
+                        .HasColumnOrder(11);
 
                     b.Property<DateTime>("FechaNacimiento")
                         .HasColumnType("DATETIME")
-                        .HasColumnOrder(7);
+                        .HasColumnOrder(8);
 
                     b.Property<string>("Habilidades")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(13);
+                        .HasColumnOrder(14);
 
                     b.Property<string>("MediodeTransporte")
                         .IsRequired()
@@ -586,14 +591,10 @@ namespace DesarrolloSocialModelo.Migrations
                         .HasColumnType("VARCHAR(50)")
                         .HasColumnOrder(4);
 
-                    b.Property<string>("NivelInstruccion")
+                    b.Property<string>("NiveldeInstruccion")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(16);
-
-                    b.Property<int>("NiveldeInstruccion")
-                        .HasColumnType("INT")
-                        .HasColumnOrder(11);
+                        .HasColumnOrder(12);
 
                     b.Property<string>("Nombres")
                         .IsRequired()
@@ -609,19 +610,20 @@ namespace DesarrolloSocialModelo.Migrations
                         .HasColumnType("INT")
                         .HasColumnOrder(20);
 
-                    b.Property<int>("PadeceEnfermedad")
-                        .HasColumnType("INT")
-                        .HasColumnOrder(23);
+                    b.Property<string>("PadeceEnfermedad")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(24);
 
                     b.Property<string>("Profesion")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(12);
+                        .HasColumnOrder(13);
 
                     b.Property<string>("Sexo")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(9);
+                        .HasColumnOrder(10);
 
                     b.Property<string>("TieneDiscapacidad")
                         .IsRequired()
@@ -636,16 +638,17 @@ namespace DesarrolloSocialModelo.Migrations
                     b.Property<string>("Tienetratamiento")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(25);
+                        .HasColumnOrder(26);
 
                     b.Property<string>("TipoEnfermedad")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(24);
+                        .HasColumnOrder(25);
 
-                    b.Property<int>("TipodeDiscapacidad")
-                        .HasColumnType("INT")
-                        .HasColumnOrder(22);
+                    b.Property<string>("TipodeDiscapacidad")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(23);
 
                     b.Property<string>("TipodeNegocio")
                         .IsRequired()
@@ -655,11 +658,22 @@ namespace DesarrolloSocialModelo.Migrations
                     b.Property<string>("TipodeTratamiento")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)")
-                        .HasColumnOrder(26);
+                        .HasColumnOrder(27);
 
-                    b.Property<int>("Trabaja")
-                        .HasColumnType("INT")
-                        .HasColumnOrder(14);
+                    b.Property<string>("Trabaja")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(15);
+
+                    b.Property<string>("Tratamiento")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(22);
+
+                    b.Property<string>("lugardeNacimiento")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnOrder(7);
 
                     b.HasKey("Id");
 

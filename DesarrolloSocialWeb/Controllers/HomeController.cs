@@ -9,7 +9,6 @@ using DesarrolloSocialNegocio.Interfaces;
 using DesarrolloSocialWeb.Models;
 using DesarrolloSocialModelo.DataModel;
 using DesarrolloSocialWeb.Filters;
-using System.Web.Http.Filters;
 using DesarrolloSocialNegocio.Services;
 
 namespace DesarrolloSocialWeb.Controllers
@@ -20,12 +19,13 @@ namespace DesarrolloSocialWeb.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IGestoresService _gestoresService;
         private readonly IDatosPrincipalesRGService _datosPrincipalesRGService;
+        private readonly ICargaFamiliarService _cargaFamiliarService;
         private readonly IResponsabledeFamiliaService _responsabledeFamiliaService;
         private readonly IHttpContextAccessor _httpContext;
         private readonly Gestores usuarioGestor;
 
         public HomeController(ILogger<HomeController> logger, IGestoresService gestoresService, IHttpContextAccessor httpContext,
-                             IDatosPrincipalesRGService datosPrincipalesRGService, IResponsabledeFamiliaService responsabledeFamiliaService)
+                             IDatosPrincipalesRGService datosPrincipalesRGService, IResponsabledeFamiliaService responsabledeFamiliaService, ICargaFamiliarService cargaFamiliarService)
 
 
         {
@@ -33,6 +33,7 @@ namespace DesarrolloSocialWeb.Controllers
             this._datosPrincipalesRGService = datosPrincipalesRGService;
             this._gestoresService = gestoresService;
             this._responsabledeFamiliaService = responsabledeFamiliaService;
+            this._cargaFamiliarService = cargaFamiliarService;
             this._httpContext = httpContext;
 
             if (!string.IsNullOrEmpty(_httpContext.HttpContext.Session.GetString("GestorLogin")))
@@ -212,5 +213,50 @@ namespace DesarrolloSocialWeb.Controllers
 
             return Json(respuesta);
         }
+
+
+        [HttpPost]
+        public IActionResult CrearCargaFamiliar(string CargaFamiliar)
+        {
+
+            var respuesta = new RespuestaModel();
+            respuesta.Estado = false;
+            respuesta.Mensaje = "El campo no puede estar vacio";
+
+            if (string.IsNullOrEmpty(CargaFamiliar))
+                return Json(respuesta);
+
+            var datosmodel = JsonConvert.DeserializeObject<CargaFamiliarDTO>(CargaFamiliar);
+            var resultado = false;
+            try
+            {
+                datosmodel.CargaFamiliar= this._cargaFamiliarService.InsertCargaFamiliar(datosmodel.CargaFamiliar);
+
+                if (datosmodel.CargaFamiliar.Id > 0)
+                {
+                    datosmodel.CargaFAdultos.IDCargaFamiliar = datosmodel.CargaFamiliar.Id;
+                    datosmodel.CargaFNiños.IDCargaFamiliar = datosmodel.CargaFamiliar.Id;
+                    datosmodel.CargaFAdolescentes.IDCargaFamiliar = datosmodel.CargaFamiliar.Id;
+                    datosmodel.CargaFAdultos.IDCargaFamiliar = datosmodel.CargaFamiliar.Id;
+                    datosmodel.CargaFJefeDefamilia.IDCargaFamiliar = datosmodel.CargaFamiliar.Id;
+                }
+
+                resultado = true;
+                if (resultado)
+                {
+                    respuesta.Estado = true;
+                    respuesta.Mensaje = "Transacción exitosa";
+                }
+            }
+            catch (Exception ex)
+            {
+                respuesta.Mensaje = ex.Message;
+                Console.WriteLine(ex.Message);
+            }
+
+            return Json(respuesta);
+        }
+
+
     }
 }
