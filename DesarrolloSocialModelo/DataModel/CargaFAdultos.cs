@@ -33,8 +33,8 @@ namespace DesarrolloSocialModelo.DataModel
         [Column(Order = 6, TypeName = "VARCHAR(50)")]
         public string IngresoAdultos { get; set; }
 
-        [Column(Order = 7, TypeName = "DATETIME")]
-        public DateTime ActividadCulturalAdultos { get; set; }
+        [Column(Order = 7, TypeName = "VARCHAR(50)")]
+        public string ActividadCulturalAdultos { get; set; }
 
         [Column(Order = 8, TypeName = "VARCHAR(50)")]
         public string EmbarazosAdultos { get; set; }

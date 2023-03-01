@@ -128,52 +128,53 @@ function RegistroCargaFamiliar() {
 
 function CargaFamiliar() {
     var CantidadDepersonasBajosuCargo = $('#cantidad').val();
-    var NiñosEstudian = $('#niñosEstudian').val();
-    var TienenDocumentoJefeDeFamilia = $('#documento1').val();
-    var CantidadJefeDeFamilia = $('#cantidad1').val();
-    var EstudiaJefeDeFamilia = $('#estudia1').val();
-    var TrabajaJefeDeFamilia = $('#trabaja1').val();
-    var IngresoJefeDeFamilia = $('#ingreso1').val();
-    var ActividadCulturalJefeDeFamilia = $('#deporte1').val();
-    var EmbarazosJefeDeFamilia = $('#embarazo1').val();
-    var EnfermedadDiscapacidadJefeDeFamilia = $('#enfermedad1').val();
-    var TratamientoJefeDeFamilia = $('#tratamiento1').val();
-    var TienenDocumentoNiños = $('#documentoNiños').val();
-    var CantidadNiños = $('#documento2').val();
-    var EstudiaNiños = $('#estudia2').val();
-    var TrabajaNiños = $('#trabaja2').val();
-    var IngresoNiños = $('#ingreso2').val();
-    var ActividadCulturalNiños = $('#deporte2').val();
-    var EmbarazosNiños = $('#embarazo2').val();
-    var EnfermedadDiscapacidadNiños = $('#enfermedad2').val();
-    var TratamientoNiños = $('#tratamiento2').val();
-    var TienenDocumentoAdolecente = $('#documento3').val();
-    var CantidadAdolecente = $('#documento3').val();
-    var EstudiaAdolecente = $('#estudia3').val();
-    var TrabajaAdolecente = $('#trabaja3').val();
-    var IngresoAdolecente = $('#ingreso3').val();
-    var ActividadCulturalAdolecente = $('#deporte3').val();
-    var EmbarazosAdolecente = $('#embarazo3').val();
-    var EnfermedadDiscapacidadAdolecente = $('#enfermedad3').val();
-    var TratamientoAdolecente = $('#tratamiento3').val();
-    var TienenDocumentoAdultos = $('#documento4').val();
-    var CantidadAdultos = $('#documento4').val();
-    var EstudiaAdultos = $('#estudia4').val();
-    var TrabajaAdultos = $('#trabaja4').val();
-    var IngresoAdultos = $('#ingreso4').val();
-    var ActividadCulturalAdultos = $('#deporte4').val();
-    var EmbarazosAdultos = $('#embarazo4').val();
-    var EnfermedadDiscapacidadAdultos = $('#enfermedad4').val();
-    var TratamientoAdultos = $('#tratamiento4').val();
-    var TienenDocumentoAdultosMayores = $('#documento5').val();
-    var CantidadAdultosMayores = $('#documento5').val();
-    var EstudiaAdultosMayores = $('#estudia5').val();
-    var TrabajaAdultosMayores = $('#trabaja5').val();
-    var IngresoAdultosMayores = $('#ingreso5').val();
-    var ActividadCulturalAdultosMayores = $('#deporte5').val();
-    var EmbarazosAdultosMayores = $('#embarazo5').val();
-    var EnfermedadDiscapacidadAdultosMayores = $('#enfermedad5').val();
-    var TratamientoAdultosMayores = $('#tratamiento5').val();
+    var NiñosEstudian = $('#niñosEstudian option:selected').text();
+    var TienenDocumentoJefeDeFamilia =''
+    var CantidadJefeDeFamilia = 0;
+    var EstudiaJefeDeFamilia = ''
+    var TrabajaJefeDeFamilia = ''
+    var IngresoJefeDeFamilia = $('#ingreso1 option: selected').text();
+    var ActividadCulturalJefeDeFamilia = ''
+    var EmbarazosJefeDeFamilia = $('#embarazo1 option: selected').text();
+    var EnfermedadDiscapacidadJefeDeFamilia = ''
+    var TratamientoJefeDeFamilia = ''
+    var TienenDocumentoNiños = $('#documentoNiños option: selected').text();
+    var CantidadNiños = $('#documento2 option: selected').text();
+    var EstudiaNiños = $('#estudia2 option: selected').text();
+    var TrabajaNiños = $('#trabaja2 option: selected').text();
+    var IngresoNiños = $('#ingreso2 option: selected').text();
+    var ActividadCulturalNiños = $('#deporte2 option: selected').text();
+    var EmbarazosNiños = $('#embarazo2 option: selected').text();
+    var EnfermedadDiscapacidadNiños = $('#enfermedad2option: selected').text();
+    var TratamientoNiños = $('#tratamiento2option: selected').text();
+    var TienenDocumentoAdolecente = $('#documento3option: selected').text();
+    var CantidadAdolecente = $('#documento3 option: selected').text();
+    var EstudiaAdolecente = $('#estudia3 option: selected').text();
+    var TrabajaAdolecente = $('#trabaja3 option: selected').text();
+    var IngresoAdolecente = $('#ingreso3 option: selected').text();
+    var ActividadCulturalAdolecente = $('#deporte3 option: selected').text();
+    var EmbarazosAdolecente = $('#embarazo3 option: selected').text();
+    var EnfermedadDiscapacidadAdolecente = $('#enfermedad3 option: selected').text();
+    var TratamientoAdolecente = $('#tratamiento3 option: selected').text();
+    var TienenDocumentoAdultos = $('#documento4 option: selected').text();
+    var CantidadAdultos = $('#documento4 option: selected').text();
+    var EstudiaAdultos = $('#estudia4 option: selected').text();
+    var TrabajaAdultos = $('#trabaja4 option: selected').text();
+    var IngresoAdultos = $('#ingreso4 option: selected').text();
+    var ActividadCulturalAdultos = $('#deporte4 option: selected').text();
+    var EmbarazosAdultos = $('#embarazo4 option: selected').text();
+    var EnfermedadDiscapacidadAdultos = $('#enfermedad4 option: selected').text();
+    var TratamientoAdultos = $('#tratamiento4 option: selected').text();
+    var TienenDocumentoAdultosMayores = $('#documento5 option: selected').text();
+    var CantidadAdultosMayores = $('#documento5 option: selected').text();
+    var EstudiaAdultosMayores = $('#estudia5 option: selected').text();
+    var TrabajaAdultosMayores = $('#trabaja5 option: selected').text();
+    var IngresoAdultosMayores = $('#ingreso5 option: selected').text();
+    var ActividadCulturalAdultosMayores = $('#deporte5 option: selected').text();
+    var EmbarazosAdultosMayores = $('#embarazo5 option: selected').text();
+    var EnfermedadDiscapacidadAdultosMayores = $('#enfermedad5 option: selected').text();
+    var TratamientoAdultosMayores = $('#tratamiento5 option: selected').text();
+    
   
 
     if (CantidadDepersonasBajosuCargo === '' || NiñosEstudian === '' || TienenDocumentoJefeDeFamilia === '' || CantidadJefeDeFamilia === '' || EstudiaJefeDeFamilia === '' || TrabajaJefeDeFamilia === '' || IngresoJefeDeFamilia === '' || ActividadCulturalJefeDeFamilia === '' || EnfermedadDiscapacidadJefeDeFamilia === '' || TratamientoJefeDeFamilia === ''
@@ -232,7 +233,7 @@ function CargaFamiliar() {
         EmbarazosAdultosMayores: EmbarazosAdultosMayores,
         EnfermedadDiscapacidadAdultosMayores: EnfermedadDiscapacidadAdultosMayores,
         TratamientoAdultosMayores: TratamientoAdultosMayores,
-        IDCargaFamiliar
+       
     }
  
 
@@ -256,7 +257,7 @@ function CargaFamiliar() {
 
     return false;
 
-
+    }
 }
 
 

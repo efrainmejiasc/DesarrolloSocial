@@ -36,8 +36,8 @@ namespace DesarrolloSocialModelo.DataModel
         [Column(Order = 6, TypeName = "FLOAT")]
         public decimal IngresoJefeDeFamilia { get; set; }
 
-        [Column(Order = 7, TypeName = "DATETIME")]
-        public DateTime ActividadCulturalJefeDeFamilia { get; set; }
+        [Column(Order = 7, TypeName = "VARCHAR(50)")]
+        public string ActividadCulturalJefeDeFamilia { get; set; }
 
         [Column(Order = 8, TypeName = "VARCHAR(50)")]
         public string EmbarazosJefeDeFamilia { get; set; }

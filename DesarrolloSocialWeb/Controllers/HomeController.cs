@@ -226,19 +226,50 @@ namespace DesarrolloSocialWeb.Controllers
             if (string.IsNullOrEmpty(CargaFamiliar))
                 return Json(respuesta);
 
-            var datosmodel = JsonConvert.DeserializeObject<CargaFamiliarDTO>(CargaFamiliar);
+            var cargadefamilia = new CargaFamiliar();
+            cargadefamilia = JsonConvert.DeserializeObject<CargaFamiliar>(CargaFamiliar);
+
+            var CargaFJefeDefamilia = new CargaFJefeDefamilia();
+            CargaFJefeDefamilia = JsonConvert.DeserializeObject<CargaFJefeDefamilia>(CargaFamiliar);
+
+
+            var CargaFNiños = new CargaFNiños();
+            CargaFNiños = JsonConvert.DeserializeObject<CargaFNiños>(CargaFamiliar);
+
+
+            var CargaFAdolescentes = new CargaFAdolescentes();
+            CargaFAdolescentes = JsonConvert.DeserializeObject<CargaFAdolescentes>(CargaFamiliar);
+
+            var CargaFAdultos = new CargaFAdultos();
+            CargaFAdultos = JsonConvert.DeserializeObject<CargaFAdultos>(CargaFamiliar);
+
+            var CargaFAdultosMayores = new CargaFAdultosMayores();
+            CargaFAdultosMayores = JsonConvert.DeserializeObject<CargaFAdultosMayores>(CargaFamiliar);
+
+       
             var resultado = false;
             try
             {
-                datosmodel.CargaFamiliar= this._cargaFamiliarService.InsertCargaFamiliar(datosmodel.CargaFamiliar);
+                cargadefamilia = this._cargaFamiliarService.InsertCargaFamiliar(cargadefamilia);
 
-                if (datosmodel.CargaFamiliar.Id > 0)
+                if (cargadefamilia.Id > 0)
                 {
-                    datosmodel.CargaFAdultos.IDCargaFamiliar = datosmodel.CargaFamiliar.Id;
-                    datosmodel.CargaFNiños.IDCargaFamiliar = datosmodel.CargaFamiliar.Id;
-                    datosmodel.CargaFAdolescentes.IDCargaFamiliar = datosmodel.CargaFamiliar.Id;
-                    datosmodel.CargaFAdultos.IDCargaFamiliar = datosmodel.CargaFamiliar.Id;
-                    datosmodel.CargaFJefeDefamilia.IDCargaFamiliar = datosmodel.CargaFamiliar.Id;
+                    CargaFNiños.IDCargaFamiliar = cargadefamilia.Id;
+
+                    CargaFAdolescentes.IDCargaFamiliar = cargadefamilia.Id;
+
+                    CargaFAdultos.IDCargaFamiliar = cargadefamilia.Id;
+
+                    CargaFAdultosMayores.IDCargaFamiliar = cargadefamilia.Id;
+
+                    CargaFJefeDefamilia.IDCargaFamiliar = cargadefamilia.Id;
+
+                    CargaFJefeDefamilia.IDCargaFamiliar = cargadefamilia.Id;
+
+                  
+                    
+
+
                 }
 
                 resultado = true;
