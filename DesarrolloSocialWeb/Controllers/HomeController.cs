@@ -26,12 +26,16 @@ namespace DesarrolloSocialWeb.Controllers
         private readonly ICargaFNiñosService _cargaFNiñosService;
         private readonly ICargaFJefeDefamiliaService _cargaFJefeDefamiliaService;
         private readonly ICargaFAdolescentesService _cargaFAdolescentesService;
+        private readonly ICargaFAdultosService _cargaFAdultosService;
+        private readonly ICargaFAdultosMayoresService _cargaFAdultosMayoresService;
+        
+
 
 
 
         public HomeController(ILogger<HomeController> logger, IGestoresService gestoresService, IHttpContextAccessor httpContext,
                              IDatosPrincipalesRGService datosPrincipalesRGService, IResponsabledeFamiliaService responsabledeFamiliaService,
-                             ICargaFamiliarService cargaFamiliarService, ICargaFJefeDefamiliaService _cargaFJefeDefamiliaService, ICargaFNiñosService cargaFNiñosService,
+                             ICargaFamiliarService cargaFamiliarService, ICargaFJefeDefamiliaService cargaFJefeDefamiliaService, ICargaFNiñosService cargaFNiñosService, ICargaFAdultosService cargaFAdultosService, ICargaFAdultosMayoresService cargaFAdultosMayoresService,
                              ICargaFAdolescentesService cargaFAdolescentesService)
 
 
@@ -44,6 +48,9 @@ namespace DesarrolloSocialWeb.Controllers
             this._httpContext = httpContext;
             this._cargaFNiñosService = cargaFNiñosService;
             this._cargaFAdolescentesService = cargaFAdolescentesService;
+            this._cargaFAdultosService = cargaFAdultosService;
+            this._cargaFAdultosMayoresService = cargaFAdultosMayoresService;
+            this._cargaFJefeDefamiliaService = cargaFJefeDefamiliaService;
 
             if (!string.IsNullOrEmpty(_httpContext.HttpContext.Session.GetString("GestorLogin")))
                 this.usuarioGestor = JsonConvert.DeserializeObject<Gestores>(_httpContext.HttpContext.Session.GetString("GestorLogin"));
@@ -239,13 +246,21 @@ namespace DesarrolloSocialWeb.Controllers
             var cargadefamilia = new CargaFamiliar();
             cargadefamilia = JsonConvert.DeserializeObject<CargaFamiliar>(CargaFamiliar);
 
+            var cedula = string.Empty;
+
+            var existeCedulaRegistrada = this._responsabledeFamiliaService.ExiteResponsabledeFamiliaRegistrada(cedula);
+            if (existeCedulaRegistrada)
+            {
+                respuesta.Estado = false;
+                respuesta.Mensaje = "El numero de documento ya esta registrado";
+                return Json(respuesta);
+            }
+
             var CargaFJefeDefamilia = new CargaFJefeDefamilia();
             CargaFJefeDefamilia = JsonConvert.DeserializeObject<CargaFJefeDefamilia>(CargaFamiliar);
 
-
             var CargaFNiños = new CargaFNiños();
             CargaFNiños = JsonConvert.DeserializeObject<CargaFNiños>(CargaFamiliar);
-
 
             var CargaFAdolescentes = new CargaFAdolescentes();
             CargaFAdolescentes = JsonConvert.DeserializeObject<CargaFAdolescentes>(CargaFamiliar);
@@ -268,20 +283,16 @@ namespace DesarrolloSocialWeb.Controllers
                     CargaFNiños = this._cargaFNiñosService.InsertCargaFNiños(CargaFNiños);
 
                     CargaFAdolescentes.IDCargaFamiliar = cargadefamilia.Id;
+                    CargaFAdolescentes = this._cargaFAdolescentesService.InsertCargaFAdolescentes(CargaFAdolescentes);
 
                     CargaFAdultos.IDCargaFamiliar = cargadefamilia.Id;
+                    CargaFAdultos = this._cargaFAdultosService.InsertCargaFAdultos(CargaFAdultos);
 
                     CargaFAdultosMayores.IDCargaFamiliar = cargadefamilia.Id;
+                    CargaFAdultosMayores = this._cargaFAdultosMayoresService.InsertCargaFAdultosMayores(CargaFAdultosMayores);
 
                     CargaFJefeDefamilia.IDCargaFamiliar = cargadefamilia.Id;
                     CargaFJefeDefamilia = this._cargaFJefeDefamiliaService.InsertCargaFJefeDefamilia(CargaFJefeDefamilia);
-
-                   
-
-                  
-                    
-
-
                 }
 
                 resultado = true;

@@ -9,7 +9,7 @@ namespace DesarrolloSocialNegocio.Interfaces
 {
     public interface ICargaFAdultosMayoresService
     {
-        bool InsertCargaFAdultosMayores(CargaFAdultosMayores model);
+        CargaFAdultosMayores InsertCargaFAdultosMayores(CargaFAdultosMayores model);
 
     }
 }

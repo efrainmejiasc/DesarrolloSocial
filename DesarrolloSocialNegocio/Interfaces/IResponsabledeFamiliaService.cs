@@ -10,6 +10,7 @@ namespace DesarrolloSocialNegocio.Interfaces
     public interface IResponsabledeFamiliaService
     {
         bool InsertResponsabledeFamilia(ResponsabledeFamilia model);
+        bool ExiteResponsabledeFamiliaRegistrada(string cedula);
 
     }
 }

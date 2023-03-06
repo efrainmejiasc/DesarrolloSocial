@@ -27,5 +27,14 @@ namespace DesarrolloSocialNegocio.Services
 
             return resultado;
         }
+
+        public bool ExiteResponsabledeFamiliaRegistrada(string cedula)
+        {
+            var modelo = this.responsabledeFamiliaRepository.ExiteResponsabledeFamiliaRegistrada(cedula);
+            if (modelo != null)
+                return true;
+
+            return false;
+        }
     }
 }

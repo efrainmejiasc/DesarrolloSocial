@@ -24,5 +24,11 @@ namespace DesarrolloSocialModelo.Repositories
 
             return model;
         }
+
+        public ResponsabledeFamilia ExiteResponsabledeFamiliaRegistrada(string cedula)
+        {
+            var responsableModel = this.db.ResponsabledeFamilia.Where(x => x.NumerodeDocumento == cedula).FirstOrDefault();
+            return responsableModel;
+        }
     }
 }

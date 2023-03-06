@@ -47,6 +47,26 @@ builder.Services.AddScoped<IResponsabledeFamiliaService, ResponsabledeFamiliaSer
 builder.Services.AddScoped<IResponsabledeFamiliaRepository, ResponsabledeFamiliaRepository>();
 builder.Services.AddScoped<ICargaFamiliarService, CargaFamiliarService>();
 builder.Services.AddScoped<ICargaFamiliarRepository, CargaFamiliarRepository>();
+builder.Services.AddScoped<ICargaFJefeDefamiliaService, CargaFJefeDefamiliaService>();
+builder.Services.AddScoped<ICargaFJefeDefamiliaRepository, CargaFJefeDefamiliaRepository>();
+builder.Services.AddScoped<ICargaFNiñosService, CargaFNiñosService>();
+builder.Services.AddScoped<ICargaFNiñosRepository, CargaFNiñosRepository>();
+builder.Services.AddScoped<ICargaFAdolescentesService, CargaFAdolescentesService>();
+builder.Services.AddScoped<ICargaFAdolescentesRepository, CargaFAdolescentesRepository>();
+builder.Services.AddScoped<ICargaFAdultosService, CargaFAdultosService>();
+builder.Services.AddScoped<ICargaFAdultosRepository, CargaFAdultosRepository>();
+builder.Services.AddScoped<ICargaFAdultosMayoresService, CargaFAdultosMayoresService>();
+builder.Services.AddScoped<ICargaFAdultosMayoresRepository, CargaFAdultosMayoresRepository>();
+
+
+
+
+
+
+
+
+
+
 
 
 var app = builder.Build();

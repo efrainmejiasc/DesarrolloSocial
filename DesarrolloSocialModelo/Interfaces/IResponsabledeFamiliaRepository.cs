@@ -9,6 +9,7 @@ namespace DesarrolloSocialModelo.Interfaces
 {
    public interface IResponsabledeFamiliaRepository
     {
+        ResponsabledeFamilia ExiteResponsabledeFamiliaRegistrada(string cedula);
         ResponsabledeFamilia InsertResponsabledeFamiliaRepository(ResponsabledeFamilia model);
     }
 }

@@ -19,14 +19,14 @@ namespace DesarrolloSocialNegocio.Services
             CargaFAdultosMayoresRepository = _CargaFAdultosMayoresRepository;
         }
 
-        public bool InsertCargaFAdultosMayores(CargaFAdultosMayores model)
+        public CargaFAdultosMayores InsertCargaFAdultosMayores(CargaFAdultosMayores model)
         {
-            var resultado = false;
+          
             model = this.CargaFAdultosMayoresRepository.InsertCargaFAdultosMayoresRepository(model);
-            if (model.Id > 0)
-                resultado = true;
+            
+             
 
-            return resultado;
+            return model;
         }
     }
 

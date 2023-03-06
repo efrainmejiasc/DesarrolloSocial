@@ -24,5 +24,6 @@ namespace DesarrolloSocialModelo.Repositories
 
             return model;
         }
+
     }
 }
