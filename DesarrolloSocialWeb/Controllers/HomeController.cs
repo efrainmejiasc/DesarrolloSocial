@@ -23,9 +23,16 @@ namespace DesarrolloSocialWeb.Controllers
         private readonly IResponsabledeFamiliaService _responsabledeFamiliaService;
         private readonly IHttpContextAccessor _httpContext;
         private readonly Gestores usuarioGestor;
+        private readonly ICargaFNiñosService _cargaFNiñosService;
+        private readonly ICargaFJefeDefamiliaService _cargaFJefeDefamiliaService;
+        private readonly ICargaFAdolescentesService _cargaFAdolescentesService;
+
+
 
         public HomeController(ILogger<HomeController> logger, IGestoresService gestoresService, IHttpContextAccessor httpContext,
-                             IDatosPrincipalesRGService datosPrincipalesRGService, IResponsabledeFamiliaService responsabledeFamiliaService, ICargaFamiliarService cargaFamiliarService)
+                             IDatosPrincipalesRGService datosPrincipalesRGService, IResponsabledeFamiliaService responsabledeFamiliaService,
+                             ICargaFamiliarService cargaFamiliarService, ICargaFJefeDefamiliaService _cargaFJefeDefamiliaService, ICargaFNiñosService cargaFNiñosService,
+                             ICargaFAdolescentesService cargaFAdolescentesService)
 
 
         {
@@ -35,9 +42,12 @@ namespace DesarrolloSocialWeb.Controllers
             this._responsabledeFamiliaService = responsabledeFamiliaService;
             this._cargaFamiliarService = cargaFamiliarService;
             this._httpContext = httpContext;
+            this._cargaFNiñosService = cargaFNiñosService;
+            this._cargaFAdolescentesService = cargaFAdolescentesService;
 
             if (!string.IsNullOrEmpty(_httpContext.HttpContext.Session.GetString("GestorLogin")))
                 this.usuarioGestor = JsonConvert.DeserializeObject<Gestores>(_httpContext.HttpContext.Session.GetString("GestorLogin"));
+            _cargaFNiñosService = cargaFNiñosService;
         }
 
         public IActionResult Index()
@@ -255,6 +265,7 @@ namespace DesarrolloSocialWeb.Controllers
                 if (cargadefamilia.Id > 0)
                 {
                     CargaFNiños.IDCargaFamiliar = cargadefamilia.Id;
+                    CargaFNiños = this._cargaFNiñosService.InsertCargaFNiños(CargaFNiños);
 
                     CargaFAdolescentes.IDCargaFamiliar = cargadefamilia.Id;
 
@@ -263,8 +274,9 @@ namespace DesarrolloSocialWeb.Controllers
                     CargaFAdultosMayores.IDCargaFamiliar = cargadefamilia.Id;
 
                     CargaFJefeDefamilia.IDCargaFamiliar = cargadefamilia.Id;
+                    CargaFJefeDefamilia = this._cargaFJefeDefamiliaService.InsertCargaFJefeDefamilia(CargaFJefeDefamilia);
 
-                    CargaFJefeDefamilia.IDCargaFamiliar = cargadefamilia.Id;
+                   
 
                   
                     
