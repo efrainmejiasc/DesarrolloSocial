@@ -248,7 +248,8 @@ function CargaFamiliar() {
             console.log(data);
             if (data.estado) {
                 toastr.success(data.mensaje);
-                //setTimeout(RedirLogin, 2000);
+
+                setTimeout(RedirLogin, 2000);
             }
             else
                 toastr.warning(data.mensaje);
@@ -259,7 +260,7 @@ function CargaFamiliar() {
 
     }
 }
-
+function RedirLogin() { window.location.href = urlVivienda };
 
 
 

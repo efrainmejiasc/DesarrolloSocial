@@ -65,5 +65,9 @@ namespace DesarrolloSocialModelo.DataModel
 
         [Column(Order = 17, TypeName = "VARCHAR(50)")]
         public string Correo { get; set; }
+
+        [Column(Order = 18, TypeName = "INT")]
+        public int IdGestor{ get; set; }
+
     }
 }

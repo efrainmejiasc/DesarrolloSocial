@@ -5,11 +5,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 }
+<script>
+    var urlSoloParaUsodelgestorylafundacion = '@Url.Action("SoloParaUsodelgestorylafundacion ","Home")';
 
+</script>
 
 <div class="card" style="margin-top:5%;">
     <div class="card-body">
-        <div class="form-horizontal" style="color:dD8CDCA">
+        <div class="form-horizontal" style="color:gray">
 
 
              <div class="col-md-8 text-md-right"> 
@@ -22,9 +25,9 @@
                          <option value="0" disabled  selected >Seleccione...</option>
                          <option value="1">Casa</option>
                          <option value="2">Apartamento</option>  
-                         <option value="1">Habitación</option>
-                         <option value="1">Rancho</option>
-                         <option value="1">Intemperie</option>
+                         <option value="3">Habitación</option>
+                         <option value="4">Rancho</option>
+                         <option value="5">Intemperie</option>
              </select>
               </div>
 
@@ -38,9 +41,9 @@
                          <option value="0" disabled  selected >Seleccione...</option>
                          <option value="1">Muy Buena</option>
                          <option value="2">Buena</option>  
-                         <option value="1">Regular</option>
-                         <option value="1">Mala</option>
-                         <option value="1">Muy Mala</option>
+                         <option value="3">Regular</option>
+                         <option value="4">Mala</option>
+                         <option value="5">Muy Mala</option>
              </select>
               </div>
 
@@ -54,9 +57,9 @@
                          <option value="0" disabled  selected >Seleccione...</option>
                          <option value="1">Ninguno</option>
                          <option value="2">Requiere Ampliación</option>  
-                         <option value="1">Mejoras o Remodelación</option>
-                         <option value="1">Mala</option>
-                         <option value="1">Muy Mala</option>
+                         <option value="3">Mejoras o Remodelación</option>
+                         <option value="4">Mala</option>
+                         <option value="5">Muy Mala</option>
              </select>
               </div>
 
@@ -70,9 +73,9 @@
                          <option value="0" disabled  selected >Seleccione...</option>
                          <option value="1">Propia</option>
                          <option value="2">Propia Pagándose</option>  
-                         <option value="1">Prestada o Cuido </option>
-                         <option value="1">Compartida</option>
-                         <option value="1">Tomada o Invadida</option>
+                         <option value="3">Prestada o Cuido </option>
+                         <option value="4">Compartida</option>
+                         <option value="5">Tomada o Invadida</option>
              </select>
               </div>
 
@@ -85,11 +88,11 @@
                <br/>
 
               <div class="col-md-12">
-              <input type="checkbox" name="Agua" /><label class="control-label">Agua</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="checkbox" name="Electricidad" /><label class="control-label">Electricidad</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="checkbox" name="Aguas Servidas" /><label class="control-label">Aguas Servidas</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="checkbox" name="Telefonía fija" /><label class="control-label">Telefonia FIja</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="checkbox" name="Aseo urbano/Recolector de basura" /><label class="control-label">Aseo Urbano/Recolector de Basura</label>
+              <input type="checkbox" id="Agua" /><label class="control-label">Agua</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="checkbox" id="Electricidad" /><label class="control-label">Electricidad</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="checkbox" id="AguasServidas" /><label class="control-label">Aguas Servidas</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="checkbox" id="Telefoníafija" /><label class="control-label">Telefonia FIja</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="checkbox" id="AseoUrbanoRecolectordeBasura" /><label class="control-label">Aseo Urbano/Recolector de Basura</label>
             </div>
       
 

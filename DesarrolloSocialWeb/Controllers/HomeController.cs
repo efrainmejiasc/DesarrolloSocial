@@ -180,6 +180,7 @@ namespace DesarrolloSocialWeb.Controllers
                 return Json(respuesta);
 
             var datosmodel = JsonConvert.DeserializeObject<DatosPrincipalesRG>(DatosPrincipalesRG);
+            datosmodel.IdGestor = this.usuarioGestor.Id;
 
             try
             {
@@ -246,15 +247,15 @@ namespace DesarrolloSocialWeb.Controllers
             var cargadefamilia = new CargaFamiliar();
             cargadefamilia = JsonConvert.DeserializeObject<CargaFamiliar>(CargaFamiliar);
 
-            var cedula = string.Empty;
+            //var cedula = string.Empty;
 
-            var existeCedulaRegistrada = this._responsabledeFamiliaService.ExiteResponsabledeFamiliaRegistrada(cedula);
-            if (existeCedulaRegistrada)
-            {
-                respuesta.Estado = false;
-                respuesta.Mensaje = "El numero de documento ya esta registrado";
-                return Json(respuesta);
-            }
+            //var existeCedulaRegistrada = this._responsabledeFamiliaService.ExiteResponsabledeFamiliaRegistrada(cedula);
+            //if (existeCedulaRegistrada)
+            //{
+            //    respuesta.Estado = false;
+            //    respuesta.Mensaje = "El numero de documento ya esta registrado";
+            //    return Json(respuesta);
+            //}
 
             var CargaFJefeDefamilia = new CargaFJefeDefamilia();
             CargaFJefeDefamilia = JsonConvert.DeserializeObject<CargaFJefeDefamilia>(CargaFamiliar);
